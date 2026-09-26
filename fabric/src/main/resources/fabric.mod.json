@@ -5,8 +5,8 @@
   ],
   "contact": {
     "homepage": "https://modrinth.com/mod/wooden-accents-mod",
-    "sources": "https://github.com/Mystery2099/WoodenAccentsMod",
-    "issues": "https://github.com/Mystery2099/WoodenAccentsMod/issues"
+    "sources": "https://github.com/The-Mystora-Project/WoodenAccentsMod",
+    "issues": "https://github.com/The-Mystora-Project/WoodenAccentsMod/issues"
   },
   "depends": {
     "fabricloader": ">=0.19.5",

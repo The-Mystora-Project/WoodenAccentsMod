@@ -109,8 +109,8 @@ I'd rather have one current version that feels finished than several half-mainta
 
 You can follow the current plans here:
 
-* [**Wooden Accents Roadmap**](https://github.com/Mystery2099/WoodenAccentsMod/blob/master/ROADMAP.md)
-* [**Changelog**](https://github.com/Mystery2099/WoodenAccentsMod/blob/master/CHANGELOG.md)
+* [**Wooden Accents Roadmap**](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/ROADMAP.md)
+* [**Changelog**](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/CHANGELOG.md)
 
 ## AI Usage
 
@@ -130,8 +130,8 @@ Credit and a link back to the project are appreciated.
 
 Wooden Accents is open source. If you want to look through the code, report a bug, or see what I'm currently working on:
 
-* [**GitHub Repository**](https://github.com/Mystery2099/WoodenAccentsMod)
-* [**Issue Tracker**](https://github.com/Mystery2099/WoodenAccentsMod/issues)
+* [**GitHub Repository**](https://github.com/The-Mystora-Project/WoodenAccentsMod)
+* [**Issue Tracker**](https://github.com/The-Mystora-Project/WoodenAccentsMod/issues)
 
 ## Support
 
