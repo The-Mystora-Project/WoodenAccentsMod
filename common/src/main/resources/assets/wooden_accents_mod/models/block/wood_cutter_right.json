@@ -1,0 +1,783 @@
+{
+	"format_version": "26.3",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"0": "minecraft:block/oak_planks",
+		"1": "minecraft:block/stripped_oak_log",
+		"2": "minecraft:block/dark_oak_planks",
+		"3": "minecraft:block/iron_block",
+		"4": "minecraft:block/stonecutter_saw",
+		"5": "minecraft:block/stonecutter_top",
+		"particle": "minecraft:block/oak_planks"
+	},
+	"elements": [
+		{
+			"name": "front_center_post",
+			"from": [
+				0,
+				0,
+				0
+			],
+			"to": [
+				1,
+				8,
+				2
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						15.0,
+						8,
+						16.0,
+						16
+					],
+					"texture": "#1",
+					"cullface": "north"
+				},
+				"east": {
+					"uv": [
+						14,
+						8,
+						16,
+						16
+					],
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [
+						0.0,
+						8,
+						1.0,
+						16
+					],
+					"texture": "#1"
+				},
+				"down": {
+					"uv": [
+						1.0,
+						0,
+						2.0,
+						2
+					],
+					"texture": "#1",
+					"cullface": "down"
+				}
+			}
+		},
+		{
+			"name": "rear_center_post",
+			"from": [
+				0,
+				0,
+				14
+			],
+			"to": [
+				1,
+				8,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						15.0,
+						8,
+						16.0,
+						16
+					],
+					"texture": "#1"
+				},
+				"east": {
+					"uv": [
+						0,
+						8,
+						2,
+						16
+					],
+					"texture": "#1"
+				},
+				"south": {
+					"uv": [
+						0.0,
+						8,
+						1.0,
+						16
+					],
+					"texture": "#1",
+					"cullface": "south"
+				},
+				"down": {
+					"uv": [
+						1.0,
+						0,
+						2.0,
+						2
+					],
+					"texture": "#1",
+					"cullface": "down"
+				}
+			}
+		},
+		{
+			"name": "front_right_post",
+			"from": [
+				14,
+				0,
+				0
+			],
+			"to": [
+				16,
+				8,
+				2
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						8,
+						2,
+						16
+					],
+					"texture": "#1",
+					"cullface": "north"
+				},
+				"east": {
+					"uv": [
+						14,
+						8,
+						16,
+						16
+					],
+					"texture": "#1",
+					"cullface": "east"
+				},
+				"south": {
+					"uv": [
+						14,
+						8,
+						16,
+						16
+					],
+					"texture": "#1"
+				},
+				"west": {
+					"uv": [
+						0,
+						8,
+						2,
+						16
+					],
+					"texture": "#1"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						2,
+						2
+					],
+					"texture": "#1",
+					"cullface": "down"
+				}
+			}
+		},
+		{
+			"name": "rear_right_post",
+			"from": [
+				14,
+				0,
+				14
+			],
+			"to": [
+				16,
+				8,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						8,
+						2,
+						16
+					],
+					"texture": "#1"
+				},
+				"east": {
+					"uv": [
+						0,
+						8,
+						2,
+						16
+					],
+					"texture": "#1",
+					"cullface": "east"
+				},
+				"south": {
+					"uv": [
+						14,
+						8,
+						16,
+						16
+					],
+					"texture": "#1",
+					"cullface": "south"
+				},
+				"west": {
+					"uv": [
+						14,
+						8,
+						16,
+						16
+					],
+					"texture": "#1"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						2,
+						2
+					],
+					"texture": "#1",
+					"cullface": "down"
+				}
+			}
+		},
+		{
+			"name": "front_right_apron",
+			"from": [
+				1,
+				6,
+				0
+			],
+			"to": [
+				14,
+				8,
+				2
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						2,
+						1,
+						14,
+						3
+					],
+					"texture": "#0",
+					"cullface": "north"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						12,
+						2
+					],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [
+						2,
+						14,
+						14,
+						16
+					],
+					"texture": "#1"
+				}
+			}
+		},
+		{
+			"name": "rear_right_apron",
+			"from": [
+				1,
+				6,
+				14
+			],
+			"to": [
+				14,
+				8,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						2,
+						8,
+						14,
+						10
+					],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [
+						2,
+						8,
+						14,
+						10
+					],
+					"texture": "#0",
+					"cullface": "south"
+				},
+				"down": {
+					"uv": [
+						2,
+						0,
+						14,
+						2
+					],
+					"texture": "#1"
+				}
+			}
+		},
+		{
+			"name": "right_side_apron",
+			"from": [
+				14,
+				6,
+				2
+			],
+			"to": [
+				16,
+				8,
+				14
+			],
+			"faces": {
+				"east": {
+					"uv": [
+						2,
+						8,
+						14,
+						10
+					],
+					"texture": "#0",
+					"cullface": "east"
+				},
+				"west": {
+					"uv": [
+						2,
+						8,
+						14,
+						10
+					],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [
+						14,
+						2,
+						16,
+						14
+					],
+					"texture": "#1"
+				}
+			}
+		},
+		{
+			"name": "front_right_stretcher",
+			"from": [
+				1,
+				1,
+				0.5
+			],
+			"to": [
+				14,
+				3,
+				1.5
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						2,
+						13,
+						14,
+						15
+					],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [
+						2,
+						13,
+						14,
+						15
+					],
+					"texture": "#0"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						12,
+						1
+					],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [
+						2,
+						14,
+						14,
+						15
+					],
+					"texture": "#1"
+				}
+			}
+		},
+		{
+			"name": "rear_right_stretcher",
+			"from": [
+				1,
+				1,
+				14.5
+			],
+			"to": [
+				14,
+				3,
+				15.5
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						2,
+						13,
+						14,
+						15
+					],
+					"texture": "#0"
+				},
+				"south": {
+					"uv": [
+						2,
+						13,
+						14,
+						15
+					],
+					"texture": "#0"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						12,
+						1
+					],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [
+						2,
+						0,
+						14,
+						1
+					],
+					"texture": "#1"
+				}
+			}
+		},
+		{
+			"name": "right_worktop",
+			"from": [
+				0,
+				8,
+				0
+			],
+			"to": [
+				16,
+				9,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					],
+					"texture": "#0",
+					"cullface": "north"
+				},
+				"east": {
+					"uv": [
+						0,
+						7,
+						16,
+						8
+					],
+					"texture": "#0",
+					"cullface": "east"
+				},
+				"south": {
+					"uv": [
+						0,
+						7,
+						16,
+						8
+					],
+					"texture": "#0",
+					"cullface": "south"
+				},
+				"west": {
+					"uv": [
+						0,
+						7,
+						16,
+						8
+					],
+					"texture": "#0",
+					"cullface": "west"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#0"
+				},
+				"down": {
+					"uv": [
+						0,
+						0,
+						16,
+						16
+					],
+					"texture": "#0"
+				}
+			}
+		},
+		{
+			"name": "right_feed_rail",
+			"from": [
+				12,
+				9,
+				0
+			],
+			"to": [
+				14,
+				10,
+				16
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						0,
+						2,
+						1
+					],
+					"texture": "#2",
+					"cullface": "north"
+				},
+				"east": {
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					],
+					"texture": "#2"
+				},
+				"south": {
+					"uv": [
+						0,
+						0,
+						2,
+						1
+					],
+					"texture": "#2",
+					"cullface": "south"
+				},
+				"west": {
+					"uv": [
+						0,
+						0,
+						16,
+						1
+					],
+					"texture": "#2"
+				},
+				"up": {
+					"uv": [
+						0,
+						0,
+						2,
+						16
+					],
+					"texture": "#2"
+				}
+			}
+		},
+		{
+			"name": "blade_mounting_plate",
+			"from": [
+				0,
+				8.9,
+				6
+			],
+			"to": [
+				7,
+				9.2,
+				10
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						8.0,
+						6,
+						15.0,
+						6.3
+					],
+					"texture": "#5"
+				},
+				"east": {
+					"uv": [
+						6,
+						6,
+						10,
+						6.3
+					],
+					"texture": "#5"
+				},
+				"south": {
+					"uv": [
+						1.0,
+						6,
+						8.0,
+						6.3
+					],
+					"texture": "#5"
+				},
+				"up": {
+					"uv": [
+						8.0,
+						6,
+						15.0,
+						10
+					],
+					"texture": "#5"
+				}
+			}
+		},
+		{
+			"name": "right_bearing",
+			"from": [
+				6,
+				9,
+				7
+			],
+			"to": [
+				7.5,
+				11,
+				9
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						0,
+						5,
+						1.5,
+						7
+					],
+					"texture": "#3"
+				},
+				"east": {
+					"uv": [
+						7,
+						5,
+						9,
+						7
+					],
+					"texture": "#3"
+				},
+				"south": {
+					"uv": [
+						14.5,
+						5,
+						16,
+						7
+					],
+					"texture": "#3"
+				},
+				"west": {
+					"uv": [
+						7,
+						5,
+						9,
+						7
+					],
+					"texture": "#3"
+				},
+				"up": {
+					"uv": [
+						14.5,
+						5,
+						16,
+						7
+					],
+					"texture": "#3"
+				}
+			}
+		},
+		{
+			"name": "vanilla_stonecutter_blade",
+			"from": [
+				0,
+				9,
+				8
+			],
+			"to": [
+				7,
+				16,
+				8
+			],
+			"faces": {
+				"north": {
+					"uv": [
+						8.0,
+						9,
+						15.0,
+						16
+					],
+					"texture": "#4"
+				},
+				"south": {
+					"uv": [
+						15.0,
+						9,
+						8.0,
+						16
+					],
+					"texture": "#4"
+				}
+			}
+		}
+	],
+	"groups": [
+		{
+			"name": "wood_cutter_right_prototype",
+			"origin": [
+				8,
+				8,
+				8
+			],
+			"children": [
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13
+			]
+		}
+	]
+}
