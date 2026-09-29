@@ -1,15 +1,7 @@
 {
 	"format_version": "26.3",
 	"credit": "Made with Blockbench",
-	"textures": {
-		"0": "minecraft:block/oak_planks",
-		"1": "minecraft:block/stripped_oak_log",
-		"2": "minecraft:block/dark_oak_planks",
-		"3": "minecraft:block/iron_block",
-		"4": "minecraft:block/stonecutter_saw",
-		"5": "minecraft:block/stonecutter_top",
-		"particle": "minecraft:block/oak_planks"
-	},
+	"textures": {"particle": "#table"},
 	"elements": [
 		{
 			"name": "front_center_post",
@@ -31,7 +23,7 @@
 						16.0,
 						16
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "north"
 				},
 				"east": {
@@ -41,7 +33,7 @@
 						16,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"south": {
 					"uv": [
@@ -50,7 +42,7 @@
 						1.0,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"down": {
 					"uv": [
@@ -59,7 +51,7 @@
 						2.0,
 						2
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "down"
 				}
 			}
@@ -84,7 +76,7 @@
 						16.0,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"east": {
 					"uv": [
@@ -93,7 +85,7 @@
 						2,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"south": {
 					"uv": [
@@ -102,7 +94,7 @@
 						1.0,
 						16
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "south"
 				},
 				"down": {
@@ -112,7 +104,7 @@
 						2.0,
 						2
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "down"
 				}
 			}
@@ -137,7 +129,7 @@
 						2,
 						16
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "north"
 				},
 				"east": {
@@ -147,7 +139,7 @@
 						16,
 						16
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "east"
 				},
 				"south": {
@@ -157,7 +149,7 @@
 						16,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"west": {
 					"uv": [
@@ -166,7 +158,7 @@
 						2,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"down": {
 					"uv": [
@@ -175,7 +167,7 @@
 						2,
 						2
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "down"
 				}
 			}
@@ -200,7 +192,7 @@
 						2,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"east": {
 					"uv": [
@@ -209,7 +201,7 @@
 						2,
 						16
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "east"
 				},
 				"south": {
@@ -219,7 +211,7 @@
 						16,
 						16
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "south"
 				},
 				"west": {
@@ -229,7 +221,7 @@
 						16,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				},
 				"down": {
 					"uv": [
@@ -238,7 +230,7 @@
 						2,
 						2
 					],
-					"texture": "#1",
+					"texture": "#frame",
 					"cullface": "down"
 				}
 			}
@@ -263,7 +255,7 @@
 						14,
 						3
 					],
-					"texture": "#0",
+					"texture": "#table",
 					"cullface": "north"
 				},
 				"south": {
@@ -273,7 +265,7 @@
 						12,
 						2
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"down": {
 					"uv": [
@@ -282,7 +274,7 @@
 						14,
 						16
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				}
 			}
 		},
@@ -306,7 +298,7 @@
 						14,
 						10
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"south": {
 					"uv": [
@@ -315,7 +307,7 @@
 						14,
 						10
 					],
-					"texture": "#0",
+					"texture": "#table",
 					"cullface": "south"
 				},
 				"down": {
@@ -325,7 +317,7 @@
 						14,
 						2
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				}
 			}
 		},
@@ -349,7 +341,7 @@
 						14,
 						10
 					],
-					"texture": "#0",
+					"texture": "#table",
 					"cullface": "east"
 				},
 				"west": {
@@ -359,7 +351,7 @@
 						14,
 						10
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"down": {
 					"uv": [
@@ -368,7 +360,7 @@
 						16,
 						14
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				}
 			}
 		},
@@ -392,7 +384,7 @@
 						14,
 						15
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"south": {
 					"uv": [
@@ -401,7 +393,7 @@
 						14,
 						15
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"up": {
 					"uv": [
@@ -410,7 +402,7 @@
 						12,
 						1
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"down": {
 					"uv": [
@@ -419,7 +411,7 @@
 						14,
 						15
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				}
 			}
 		},
@@ -443,7 +435,7 @@
 						14,
 						15
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"south": {
 					"uv": [
@@ -452,7 +444,7 @@
 						14,
 						15
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"up": {
 					"uv": [
@@ -461,7 +453,7 @@
 						12,
 						1
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"down": {
 					"uv": [
@@ -470,7 +462,7 @@
 						14,
 						1
 					],
-					"texture": "#1"
+					"texture": "#frame"
 				}
 			}
 		},
@@ -494,7 +486,7 @@
 						16,
 						1
 					],
-					"texture": "#0",
+					"texture": "#table",
 					"cullface": "north"
 				},
 				"east": {
@@ -504,7 +496,7 @@
 						16,
 						8
 					],
-					"texture": "#0",
+					"texture": "#table",
 					"cullface": "east"
 				},
 				"south": {
@@ -514,7 +506,7 @@
 						16,
 						8
 					],
-					"texture": "#0",
+					"texture": "#table",
 					"cullface": "south"
 				},
 				"west": {
@@ -524,7 +516,7 @@
 						16,
 						8
 					],
-					"texture": "#0",
+					"texture": "#table",
 					"cullface": "west"
 				},
 				"up": {
@@ -534,7 +526,7 @@
 						16,
 						16
 					],
-					"texture": "#0"
+					"texture": "#table"
 				},
 				"down": {
 					"uv": [
@@ -543,7 +535,7 @@
 						16,
 						16
 					],
-					"texture": "#0"
+					"texture": "#table"
 				}
 			}
 		},
@@ -567,7 +559,7 @@
 						2,
 						1
 					],
-					"texture": "#2",
+					"texture": "#feed_rails",
 					"cullface": "north"
 				},
 				"east": {
@@ -577,7 +569,7 @@
 						16,
 						1
 					],
-					"texture": "#2"
+					"texture": "#feed_rails"
 				},
 				"south": {
 					"uv": [
@@ -586,7 +578,7 @@
 						2,
 						1
 					],
-					"texture": "#2",
+					"texture": "#feed_rails",
 					"cullface": "south"
 				},
 				"west": {
@@ -596,7 +588,7 @@
 						16,
 						1
 					],
-					"texture": "#2"
+					"texture": "#feed_rails"
 				},
 				"up": {
 					"uv": [
@@ -605,7 +597,7 @@
 						2,
 						16
 					],
-					"texture": "#2"
+					"texture": "#feed_rails"
 				}
 			}
 		},
@@ -629,7 +621,7 @@
 						15.0,
 						6.3
 					],
-					"texture": "#5"
+					"texture": "#blade_mount"
 				},
 				"east": {
 					"uv": [
@@ -638,7 +630,7 @@
 						10,
 						6.3
 					],
-					"texture": "#5"
+					"texture": "#blade_mount"
 				},
 				"south": {
 					"uv": [
@@ -647,7 +639,7 @@
 						8.0,
 						6.3
 					],
-					"texture": "#5"
+					"texture": "#blade_mount"
 				},
 				"up": {
 					"uv": [
@@ -656,7 +648,7 @@
 						15.0,
 						10
 					],
-					"texture": "#5"
+					"texture": "#blade_mount"
 				}
 			}
 		},
@@ -680,7 +672,7 @@
 						1.5,
 						7
 					],
-					"texture": "#3"
+					"texture": "#bearings"
 				},
 				"east": {
 					"uv": [
@@ -689,7 +681,7 @@
 						9,
 						7
 					],
-					"texture": "#3"
+					"texture": "#bearings"
 				},
 				"south": {
 					"uv": [
@@ -698,7 +690,7 @@
 						16,
 						7
 					],
-					"texture": "#3"
+					"texture": "#bearings"
 				},
 				"west": {
 					"uv": [
@@ -707,7 +699,7 @@
 						9,
 						7
 					],
-					"texture": "#3"
+					"texture": "#bearings"
 				},
 				"up": {
 					"uv": [
@@ -716,7 +708,7 @@
 						16,
 						7
 					],
-					"texture": "#3"
+					"texture": "#bearings"
 				}
 			}
 		},
@@ -740,7 +732,7 @@
 						15.0,
 						16
 					],
-					"texture": "#4"
+					"texture": "#saw_blade"
 				},
 				"south": {
 					"uv": [
@@ -749,7 +741,7 @@
 						8.0,
 						16
 					],
-					"texture": "#4"
+					"texture": "#saw_blade"
 				}
 			}
 		}
