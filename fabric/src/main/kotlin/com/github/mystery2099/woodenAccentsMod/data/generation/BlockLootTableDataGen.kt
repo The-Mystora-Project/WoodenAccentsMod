@@ -61,7 +61,7 @@ class BlockLootTableDataGen(dataOutput: FabricDataOutput, registryLookup: Comple
     }
 }
 
-/** Adds every condition to the same loot function builder. */
+/** Adds all conditions to the same loot function builder. */
 fun <t : LootItemConditionalFunction.Builder<*>> t.conditionally(vararg builders: LootItemCondition.Builder): t {
     builders.forEach { this.`when`(it) }
     return this

@@ -104,8 +104,7 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
         neighborPos: BlockPos
     ): BlockState {
         val updated = super.updateShape(state, direction, neighborState, world, pos, neighborPos)
-        // Pop off when the mount is removed, like vanilla ladders. Content are
-        // scattered in onRemove.
+        // Drop the shelf when its support disappears. onRemove scatters its contents.
         if (direction == updated.getValue(facing).opposite && !updated.canSurvive(world, pos)) {
             return Blocks.AIR.defaultBlockState()
         }
@@ -167,8 +166,7 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
     override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity =
         BracketShelfBlockEntity(pos, state)
 
-    /** Right-click with an item: drains standing water with a bucket, otherwise
-     * swaps the slot under the cursor for a copy of the held stack. */
+    /** Drains water with a bucket or swaps the held stack with the selected slot. */
     override fun useItemOn(
         stack: ItemStack,
         state: BlockState,
@@ -180,7 +178,7 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
     ): ItemInteractionResult {
         if (world.isClientSide) return ItemInteractionResult.SUCCESS
 
-        // Drain water first so an empty bucket can be used in the same spot it was filled with.
+        // Handle the bucket before swapping items so it can drain the shelf.
         if (state.getValue(waterlogged) && stack.`is`(Items.BUCKET)) {
             player.setItemInHand(
                 hand,
@@ -205,7 +203,6 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
         if (world.hasNeighborSignal(pos)) {
             swapWithHotbar(world, pos, state.getValue(facing), player)
         } else {
-            // Placing a held item replaces the shelf stack; the shelf stack moves to the hand.
             val slot = slotFromHit(hit, pos, state.getValue(facing))
             val shelfStack = blockEntity.getItem(slot)
             blockEntity.setItem(slot, stack.copy())
@@ -215,8 +212,7 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
         return ItemInteractionResult.CONSUME
     }
 
-    /** Right-click with an empty hand: takes the item in the slot under the cursor,
-     * or triggers the powered hotbar swap. */
+    /** Takes the selected item, or swaps with the hotbar when powered. */
     override fun useWithoutItem(
         state: BlockState,
         world: Level,
@@ -241,8 +237,7 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
         return InteractionResult.CONSUME
     }
 
-    /** Swaps the main-hand stack with the slot under the cursor; the shelf's
-     * first slot is the leftmost one when viewed from the front. */
+    /** Finds the clicked slot, numbered left to right from the front of the shelf. */
     private fun slotFromHit(hit: BlockHitResult, pos: BlockPos, facing: Direction): Int {
         val leftDirection = facing.getClockWise()
         val hitPos = hit.location
@@ -257,8 +252,7 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
         return ((1.0 - alongLeft) * 3.0).toInt().coerceIn(0, BracketShelfBlockEntity.SLOT_COUNT - 1)
     }
 
-    /** A powered shelf swaps its slots (and its powered neighbours', up to three
-     * shelves of the same wood, all facing [facing]) with the rightmost hotbar slots. */
+    /** Swaps up to three connected, powered shelves facing [facing] with the rightmost hotbar slots. */
     private fun swapWithHotbar(world: Level, clickedPos: BlockPos, facing: Direction, player: Player) {
         val leftDirection = facing.getClockWise()
         val rightDirection = facing.getCounterClockWise()

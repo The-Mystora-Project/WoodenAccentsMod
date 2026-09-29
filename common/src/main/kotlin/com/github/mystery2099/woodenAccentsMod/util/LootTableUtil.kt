@@ -18,11 +18,10 @@ import net.minecraft.world.level.storage.loot.predicates.LootItemCondition
 import net.minecraft.world.level.storage.loot.predicates.MatchTool
 
 /**
- * Loot-table helpers mirroring vanilla [net.minecraft.data.loot.BlockLootSubProvider]'s protected
- * convenience methods, kept here so block classes need no loader-specific provider base class.
+ * Exposes vanilla [net.minecraft.data.loot.BlockLootSubProvider] loot helpers to shared block classes.
  */
 object LootTableUtil {
-    // Enchantment matching now goes through an item sub-predicate on DataComponents.ENCHANTMENTS.
+    // Match enchantments through the item's ENCHANTMENTS component.
     fun hasSilkTouch(registries: HolderLookup.Provider): LootItemCondition.Builder {
         val enchantments = registries.lookupOrThrow(Registries.ENCHANTMENT)
         return MatchTool.toolMatches(
@@ -44,17 +43,17 @@ object LootTableUtil {
     fun hasNoSilkTouch(registries: HolderLookup.Provider): LootItemCondition.Builder =
         hasSilkTouch(registries).invert()
 
-    /** Drops only survive if the entity wasn't caught in an explosion that destroyed the block. */
+    /** Requires the drop to survive an explosion. */
     fun <T : ConditionUserBuilder<T>> applyExplosionCondition(item: ItemLike, builder: T): T {
         return builder.`when`(ExplosionCondition.survivesExplosion())
     }
 
-    /** Stack sizes decay alongside the explosion that dropped them unless the item resists explosions. */
+    /** Reduces the drop count based on explosion strength. */
     fun <T : FunctionUserBuilder<T>> applyExplosionDecay(item: ItemLike, builder: T): T {
         return builder.apply(ApplyExplosionDecay.explosionDecay())
     }
 
-    /** Adds every condition to the same loot function builder. */
+    /** Adds all conditions to [builder]. */
     fun <T : LootItemConditionalFunction.Builder<*>> conditionally(
         builder: T,
         vararg builders: LootItemCondition.Builder
