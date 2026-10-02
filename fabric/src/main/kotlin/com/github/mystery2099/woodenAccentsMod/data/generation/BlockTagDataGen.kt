@@ -51,6 +51,8 @@ class BlockTagDataGen(output: FabricDataOutput, registriesFuture: CompletableFut
             BlockTags.WOODEN_FENCES,
         )
         ModBlockTags.kitchenCounters += ModBlockTags.kitchenCabinets
+        ModBlockTags.tallCoffeeTableConnectable += Blocks.SCAFFOLDING
+        ModBlockTags.supportBeamsCannotConnect += BlockTags.FENCE_GATES
 
         BlockTags.WALLS += ModBlockTags.woodenWalls
         BlockTags.WOODEN_FENCES += ModBlockTags.modernFences

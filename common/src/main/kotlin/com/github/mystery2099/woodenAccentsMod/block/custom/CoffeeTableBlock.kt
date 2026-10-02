@@ -36,7 +36,6 @@ import com.google.gson.JsonArray
 import com.google.gson.JsonObject
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.state.BlockState
-import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.TooltipFlag
@@ -156,7 +155,7 @@ class CoffeeTableBlock(val baseBlock: Block, private val topBlock: Block) :
             getBlockState(pos)?.let { thisState: BlockState ->
                 val states = arrayOf(thisState, otherState)
                 if (states.all { it.block is CoffeeTableBlock }) thisState.getValue(type) == otherState.getValue(type)
-                else if (otherState isOf  Blocks.SCAFFOLDING) thisState.isTall
+                else if (otherState isIn ModBlockTags.tallCoffeeTableConnectable) thisState.isTall
                 else states.all { it isIn tag }
             } ?: false
         } ?: false

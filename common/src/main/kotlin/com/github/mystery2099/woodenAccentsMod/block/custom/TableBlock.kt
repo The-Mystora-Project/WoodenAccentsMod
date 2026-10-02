@@ -26,6 +26,7 @@ import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.Custom
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomTagProvider
 import com.github.mystery2099.woodenAccentsMod.item.group.ModItemGroup
 import com.github.mystery2099.woodenAccentsMod.registry.tag.ModBlockTags
+import com.github.mystery2099.woodenAccentsMod.block.BlockStateUtil.isIn
 import com.github.mystery2099.woodenAccentsMod.util.WhenUtil
 import com.github.mystery2099.woodenAccentsMod.util.WhenUtil.allOf
 import net.minecraft.world.level.block.Block
@@ -97,7 +98,7 @@ class TableBlock(val baseBlock: Block, private val topBlock: Block) :
     }
 
     private fun LevelAccessor.checkDirection(pos: BlockPos, direction: Direction): Boolean {
-        return getBlockState(pos.relative(direction)).block is TableBlock
+        return getBlockState(pos.relative(direction)) isIn tag
     }
 
     private infix fun LevelAccessor.checkNorthOf(pos: BlockPos): Boolean = checkDirection(pos, Direction.NORTH)
