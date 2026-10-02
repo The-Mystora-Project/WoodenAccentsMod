@@ -20,6 +20,66 @@ import net.minecraft.world.level.block.Blocks
 
 /** Recipe-builder conveniences used by blocks that own their recipe definitions. */
 object RecipeUtil {
+    data class WoodFamily(
+        val log: Block,
+        val wood: Block?,
+        val strippedLog: Block,
+        val strippedWood: Block?,
+        val planks: Block,
+        val plankYield: Int = 4
+    )
+
+    /** Vanilla wood families used by both woodcutting conversion recipes and log expansion. */
+    val woodFamilies = listOf(
+        WoodFamily(
+            Blocks.OAK_LOG, Blocks.OAK_WOOD, Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_OAK_WOOD, Blocks.OAK_PLANKS
+        ),
+        WoodFamily(
+            Blocks.SPRUCE_LOG, Blocks.SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_WOOD,
+            Blocks.SPRUCE_PLANKS
+        ),
+        WoodFamily(
+            Blocks.BIRCH_LOG, Blocks.BIRCH_WOOD, Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_BIRCH_WOOD,
+            Blocks.BIRCH_PLANKS
+        ),
+        WoodFamily(
+            Blocks.JUNGLE_LOG, Blocks.JUNGLE_WOOD, Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_WOOD,
+            Blocks.JUNGLE_PLANKS
+        ),
+        WoodFamily(
+            Blocks.ACACIA_LOG, Blocks.ACACIA_WOOD, Blocks.STRIPPED_ACACIA_LOG, Blocks.STRIPPED_ACACIA_WOOD,
+            Blocks.ACACIA_PLANKS
+        ),
+        WoodFamily(
+            Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_WOOD,
+            Blocks.DARK_OAK_PLANKS
+        ),
+        WoodFamily(
+            Blocks.MANGROVE_LOG, Blocks.MANGROVE_WOOD, Blocks.STRIPPED_MANGROVE_LOG,
+            Blocks.STRIPPED_MANGROVE_WOOD, Blocks.MANGROVE_PLANKS
+        ),
+        WoodFamily(
+            Blocks.CHERRY_LOG, Blocks.CHERRY_WOOD, Blocks.STRIPPED_CHERRY_LOG, Blocks.STRIPPED_CHERRY_WOOD,
+            Blocks.CHERRY_PLANKS
+        ),
+        WoodFamily(
+            log = Blocks.BAMBOO_BLOCK,
+            wood = null,
+            strippedLog = Blocks.STRIPPED_BAMBOO_BLOCK,
+            strippedWood = null,
+            planks = Blocks.BAMBOO_PLANKS,
+            plankYield = 2
+        ),
+        WoodFamily(
+            Blocks.CRIMSON_STEM, Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_STEM,
+            Blocks.STRIPPED_CRIMSON_HYPHAE, Blocks.CRIMSON_PLANKS
+        ),
+        WoodFamily(
+            Blocks.WARPED_STEM, Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_STEM,
+            Blocks.STRIPPED_WARPED_HYPHAE, Blocks.WARPED_PLANKS
+        )
+    )
+
     /** Adds the recipe-book unlock criterion for [requiredItem]. */
     fun ShapedRecipeBuilder.requires(requiredItem: ItemLike): ShapedRecipeBuilder {
         return unlockedBy(RecipeProvider.getHasName(requiredItem), RecipeProvider.has(requiredItem))
@@ -60,20 +120,14 @@ object RecipeUtil {
             .save(recipeOutput, "${resultId.path}_from_${inputId.path}_woodcutting".toIdentifier())
     }
 
-    private val plankWoodInputs: Map<Item, Pair<List<ItemLike>, Int>> = mapOf(
-        Blocks.OAK_PLANKS.asItem() to (listOf(Blocks.OAK_LOG, Blocks.OAK_WOOD, Blocks.STRIPPED_OAK_LOG, Blocks.STRIPPED_OAK_WOOD) to 4),
-        Blocks.SPRUCE_PLANKS.asItem() to (listOf(Blocks.SPRUCE_LOG, Blocks.SPRUCE_WOOD, Blocks.STRIPPED_SPRUCE_LOG, Blocks.STRIPPED_SPRUCE_WOOD) to 4),
-        Blocks.BIRCH_PLANKS.asItem() to (listOf(Blocks.BIRCH_LOG, Blocks.BIRCH_WOOD, Blocks.STRIPPED_BIRCH_LOG, Blocks.STRIPPED_BIRCH_WOOD) to 4),
-        Blocks.JUNGLE_PLANKS.asItem() to (listOf(Blocks.JUNGLE_LOG, Blocks.JUNGLE_WOOD, Blocks.STRIPPED_JUNGLE_LOG, Blocks.STRIPPED_JUNGLE_WOOD) to 4),
-        Blocks.ACACIA_PLANKS.asItem() to (listOf(Blocks.ACACIA_LOG, Blocks.ACACIA_WOOD, Blocks.STRIPPED_ACACIA_LOG, Blocks.STRIPPED_ACACIA_WOOD) to 4),
-        Blocks.DARK_OAK_PLANKS.asItem() to (listOf(Blocks.DARK_OAK_LOG, Blocks.DARK_OAK_WOOD, Blocks.STRIPPED_DARK_OAK_LOG, Blocks.STRIPPED_DARK_OAK_WOOD) to 4),
-        Blocks.MANGROVE_PLANKS.asItem() to (listOf(Blocks.MANGROVE_LOG, Blocks.MANGROVE_WOOD, Blocks.STRIPPED_MANGROVE_LOG, Blocks.STRIPPED_MANGROVE_WOOD) to 4),
-        Blocks.CHERRY_PLANKS.asItem() to (listOf(Blocks.CHERRY_LOG, Blocks.CHERRY_WOOD, Blocks.STRIPPED_CHERRY_LOG, Blocks.STRIPPED_CHERRY_WOOD) to 4),
-        Blocks.BAMBOO_PLANKS.asItem() to (listOf(Blocks.BAMBOO_BLOCK, Blocks.STRIPPED_BAMBOO_BLOCK) to 2),
-        Blocks.CRIMSON_PLANKS.asItem() to (listOf(Blocks.CRIMSON_STEM, Blocks.CRIMSON_HYPHAE, Blocks.STRIPPED_CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_HYPHAE) to 4),
-        Blocks.WARPED_PLANKS.asItem() to (listOf(Blocks.WARPED_STEM, Blocks.WARPED_HYPHAE, Blocks.STRIPPED_WARPED_STEM, Blocks.STRIPPED_WARPED_HYPHAE) to 4),
-        Blocks.BAMBOO_MOSAIC.asItem() to (listOf(Blocks.BAMBOO_BLOCK, Blocks.STRIPPED_BAMBOO_BLOCK) to 2)
-    )
+    private val plankWoodInputs: Map<Item, Pair<List<ItemLike>, Int>> = buildMap {
+        woodFamilies.forEach { family ->
+            put(family.planks.asItem(), family.plankInputs() to family.plankYield)
+        }
+        put(Blocks.BAMBOO_MOSAIC.asItem(), getValue(Blocks.BAMBOO_PLANKS.asItem()))
+    }
+
+    private fun WoodFamily.plankInputs(): List<ItemLike> = listOfNotNull(log, wood, strippedLog, strippedWood)
 
     fun ShapedRecipeBuilder.customGroup(block: Block, name: String): ShapedRecipeBuilder {
         return group(
