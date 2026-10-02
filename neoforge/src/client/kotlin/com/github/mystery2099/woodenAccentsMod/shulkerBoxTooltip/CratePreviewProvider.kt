@@ -13,7 +13,7 @@ class CratePreviewProvider : BlockEntityPreviewProvider(9, true, 3) {
     override fun showTooltipHints(context: PreviewContext): Boolean = true
 
     override fun addTooltip(context: PreviewContext): List<Component> {
-        // An unresolved loot table rides the stack in DataComponents.CONTAINER_LOOT.
+        // Hide contents until the loot table in DataComponents.CONTAINER_LOOT resolves.
         if (canUseLootTables() && context.stack().has(DataComponents.CONTAINER_LOOT)) {
             val style = Style.EMPTY.withColor(ChatFormatting.GRAY)
             return listOf(Component.literal("???????").setStyle(style))

@@ -13,9 +13,8 @@ import com.mojang.math.Axis
 
 
 /**
- * Draws each stack stored in a shelf flat against its front face, like vanilla
- * wall-mounted shelves. Slot indices run left to right when viewed from the
- * shelf's front (the left slot is on the clockwise side of `facing`).
+ * Renders stored items against the shelf's front face. Slots run left to right
+ * from the viewer's perspective; the first slot lies clockwise from [BracketShelfBlock.facing].
  */
 class BracketShelfBlockEntityRenderer(context: BlockEntityRendererProvider.Context) :
     BlockEntityRenderer<BracketShelfBlockEntity> {
@@ -42,7 +41,7 @@ class BracketShelfBlockEntityRenderer(context: BlockEntityRendererProvider.Conte
             val model = itemRenderer.getModel(stack, world, null, slot)
             val scale = if (model.isGui3d) BLOCK_ITEM_SCALE else FLAT_ITEM_SCALE
 
-            // Distance from the block's center along the shelf's left (-) axis.
+            // Offset from the center toward the first slot.
             val slotOffset = (1.0 - slot) / slotsCount
             matrices.pushPose()
             matrices.translate(
@@ -66,14 +65,14 @@ class BracketShelfBlockEntityRenderer(context: BlockEntityRendererProvider.Conte
         }
     }
 
-    /** Same readable-from-`facing` rotation vanilla lecterns use. */
+    /** Rotates items to face the viewer, as vanilla lecterns do. */
     private fun itemYaw(facing: Direction): Float = -facing.clockWise.toYRot()
 
     companion object {
-        /** Top of the 11..13 shelf plank, where items rest. */
+        /** Y position used to render shelf items. */
         private const val ITEM_Y = 0.875
 
-        /** Moves items toward the wall and clear of the shelf's front edge. */
+        /** Moves items toward the wall, clear of the shelf's front edge. */
         private const val DEPTH_OFFSET = 0.1875
         private const val BLOCK_ITEM_SCALE = 0.5f
         private const val FLAT_ITEM_SCALE = 0.625f
