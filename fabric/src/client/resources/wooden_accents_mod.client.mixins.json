@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.github.mystery2099.woodenAccentsMod.mixin.client",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "ClientRecipeBookMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

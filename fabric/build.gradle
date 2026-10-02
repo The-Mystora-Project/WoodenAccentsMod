@@ -51,6 +51,8 @@ base {
 repositories {
 	maven { url = uri("https://maven.misterpemodder.com/libs-release/") }
 	maven { url = uri("https://maven.shedaniel.me/") }
+	maven { url = uri("https://maven.blamejared.com/") }
+	maven { url = uri("https://maven.architectury.dev/") }
 	maven {
 		name = "Terraformers"
 		url = uri("https://maven.terraformersmc.com/")
@@ -160,6 +162,11 @@ dependencies {
 		exclude(group: "net.fabricmc.fabric-api")
 	}
 	modImplementation "maven.modrinth:voxlib:${project.voxlib_version}"
+	modCompileOnly "mezz.jei:jei-${project.minecraft_version}-common-api:${project.jei_version}"
+	modCompileOnly("me.shedaniel:RoughlyEnoughItems-api-fabric:${project.rei_version}") {
+		exclude(group: "net.fabricmc.fabric-api")
+		exclude(group: "net.fabricmc", module: "fabric-loader")
+	}
 	// Makes VoxLib's shape debugger accessible in development without shipping Mod Menu.
 	modLocalRuntime "com.terraformersmc:modmenu:${project.modmenu_version}"
 	// Loom's development remap drops VoxLib's nested-jar declaration, so provide its embedded library at runtime.

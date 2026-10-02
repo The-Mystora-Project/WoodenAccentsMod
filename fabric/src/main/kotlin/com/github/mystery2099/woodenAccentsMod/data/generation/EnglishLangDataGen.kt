@@ -4,6 +4,7 @@ import com.github.mystery2099.woodenAccentsMod.WoodenAccentsMod.toIdentifier
 import com.github.mystery2099.woodenAccentsMod.block.ModBlocks
 import com.github.mystery2099.woodenAccentsMod.block.id
 import com.github.mystery2099.woodenAccentsMod.item.group.ModItemGroup
+import com.github.mystery2099.woodenAccentsMod.stat.ModStats
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider
 import net.minecraft.core.HolderLookup
@@ -25,6 +26,9 @@ class EnglishLangDataGen(dataOutput: FabricDataOutput, registryLookup: Completab
                 add(group.path.toIdentifier().toLanguageKey(), "Wooden Accents: $name")
             }
             add("container.crate.more", "and %s more...")
+            add("container.wooden_accents_mod.wood_cutter", "Wood Cutter")
+            add("category.wooden_accents_mod.woodcutting", "Woodcutting")
+            add(ModStats.interactWithWoodCutter.toLanguageKey("stat"), "Interactions with Wood Cutter")
         }
     }
 

@@ -36,6 +36,12 @@
         "adapter": "kotlin"
       }
     ],
+    "jei_mod_plugin": [
+      "com.github.mystery2099.woodenAccentsMod.jei.WoodenAccentsJeiPlugin"
+    ],
+    "rei_client": [
+      "com.github.mystery2099.woodenAccentsMod.rei.WoodenAccentsReiPlugin"
+    ],
     "shulkerboxtooltip": [
       {
         "value": "com.github.mystery2099.woodenAccentsMod.shulkerBoxTooltip.ShulkerBoxTooltipPlugin",
@@ -44,6 +50,12 @@
     ]
   },
   "environment": "*",
+  "mixins": [
+    {
+      "config": "wooden_accents_mod.client.mixins.json",
+      "environment": "client"
+    }
+  ],
   "icon": "assets/wooden_accents_mod/icon.png",
   "id": "wooden_accents_mod",
   "license": "MMPL-1.0.1",

@@ -7,7 +7,11 @@ import com.github.mystery2099.woodenAccentsMod.block.entity.ModBlockEntities
 import com.github.mystery2099.woodenAccentsMod.entity.ModEntities
 import com.github.mystery2099.woodenAccentsMod.item.group.ItemGroupContent
 import com.github.mystery2099.woodenAccentsMod.item.group.ModItemGroup
+import com.github.mystery2099.woodenAccentsMod.recipe.ModRecipeSerializers
+import com.github.mystery2099.woodenAccentsMod.recipe.ModRecipeTypes
 import com.github.mystery2099.woodenAccentsMod.registry.component.ModDataComponents
+import com.github.mystery2099.woodenAccentsMod.screen.ModMenuTypes
+import com.github.mystery2099.woodenAccentsMod.stat.ModStats
 import net.minecraft.core.Registry
 import net.minecraft.core.registries.BuiltInRegistries
 import net.minecraft.core.registries.Registries
@@ -48,6 +52,10 @@ class WoodenAccentsNeoForge(modBus: IEventBus) {
             Registries.ITEM -> ModBlocks.registerItems()
             Registries.BLOCK_ENTITY_TYPE -> ModBlockEntities.register()
             Registries.ENTITY_TYPE -> ModEntities.register()
+            Registries.RECIPE_TYPE -> ModRecipeTypes.register()
+            Registries.RECIPE_SERIALIZER -> ModRecipeSerializers.register()
+            Registries.MENU -> ModMenuTypes.register()
+            Registries.CUSTOM_STAT -> ModStats.register()
             Registries.CREATIVE_MODE_TAB -> registerCreativeTabs()
         }
     }

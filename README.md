@@ -34,6 +34,7 @@ Block tags define many of these connections, so data packs can change which bloc
 - Tables, desks, kitchen counters, and cabinets
 - Coffee tables that stack into a taller version; Silk Touch keeps the tall variant when you pick it up
 - Narrow bookshelves based on vanilla chiseled bookshelves
+- A wood cutter that works like the stonecutter, but for wood
 
 ### Storage
 
@@ -50,7 +51,7 @@ Block tags define many of these connections, so data packs can change which bloc
 - Support beams that connect in all six directions
 - Thin and thick pillars that connect vertically
 
-Every block has a variant for each vanilla wood type in 1.21.1, including bamboo, cherry, crimson, and warped wood.
+Every block except the wood cutter has a variant for each vanilla wood type in 1.21.1, including bamboo, cherry, crimson, and warped wood.
 
 ## Using the blocks
 
@@ -60,6 +61,7 @@ The creative tabs group blocks into Furniture, Storage, and Building. Each block
 - Crates keep their nine slots of items when broken. Crates with identical item data can stack up to four. Crates reject items in the mod's `unnestable` tag, including other crates and shulker boxes.
 - Name a crate, desk drawer, or kitchen cabinet in an anvil before placing it. The container uses that name, and its dropped block item keeps it. Drawers and cabinets scatter their contents separately when broken.
 - Place a matching coffee table on top of a short one to make it tall. Silk Touch keeps the tall version; breaking it normally drops two short tables.
+- Use a wood cutter like a stonecutter: put wood in the left slot and pick a result. Recipes use the `wooden_accents_mod:woodcutting` type, which has the same JSON format as `minecraft:stonecutting`, so datapacks can add their own. JEI and REI show them under Woodcutting.
 - Attach bracket shelves to solid block faces. Use the left, middle, or right third to swap that slot with your held stack. Power up to three connected shelves facing the same way to swap their contents with the rightmost three, six, or nine hotbar slots. Hoppers insert from above and extract below.
 
 Picket fences, plank flooring, and narrow bookshelves previously had names based on "modern fences," "plank carpets," and "bookshelves." Their block and item IDs are unchanged, so existing worlds and recipes keep working.

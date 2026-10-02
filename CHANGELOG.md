@@ -2,6 +2,17 @@
 
 This file tracks player-visible changes and anything maintainers need to know before publishing a release. Release headings must match `mod_version` in `gradle.properties` so the publishing workflow can use the section as its release notes.
 
+## [1.21.1-1.3.0.0] - 2026-10-02
+
+### Added
+
+- Added the Wood Cutter, a wooden take on the stonecutter. Craft it with an iron ingot over three planks of any wood.
+- Added the `wooden_accents_mod:woodcutting` recipe type so datapacks and other mods can add their own wood cutter recipes. It uses the same JSON format as `minecraft:stonecutting`.
+- Vanilla planks can be cut into their matching stairs and slabs, and bamboo planks into bamboo mosaic.
+- Woodcutting recipes unlock like stonecutting ones do, complete with a recipe toast showing the wood cutter.
+- Woodcutting recipes show up in JEI and REI on both loaders, with the wood cutter listed as their workstation. JEI can also move ingredients into the wood cutter.
+- The wood cutter burns in furnaces for 300 ticks, like other wooden workstations.
+
 ## [1.21.1-1.2.0.0] - 2026-09-25
 
 This is the first stable Wooden Accents release for Minecraft 1.21.1 on Fabric and NeoForge.
