@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_stripped_mangrove_log": {
+      "conditions": {
+        "items": [
+          {
+            "items": "minecraft:stripped_mangrove_log"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "wooden_accents_mod:mangrove_plank_wall_from_stripped_mangrove_log_woodcutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_stripped_mangrove_log"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "wooden_accents_mod:mangrove_plank_wall_from_stripped_mangrove_log_woodcutting"
+    ]
+  }
+}

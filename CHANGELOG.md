@@ -2,6 +2,15 @@
 
 This file tracks player-visible changes and anything maintainers need to know before publishing a release. Release headings must match `mod_version` in `gradle.properties` so the publishing workflow can use the section as its release notes.
 
+## [1.21.1-1.3.1.0] - 2026-10-02
+
+### Added
+
+- Added wood cutter recipes for vanilla fences, gates, doors, trapdoors, buttons, pressure plates, signs, and bamboo mosaic stairs and slabs.
+- Logs, wood, stems, hyphae, and bamboo blocks can be stripped or cut into planks in the wood cutter.
+- Every plank-based woodcutting result can also be cut directly from matching logs and wood, including stripped variants. Direct recipes yield four times the plank recipe output, or twice for bamboo blocks.
+- Added wood cutter recipes for chairs, tables, coffee tables, desks, counters, shelves, ladders, walls, pillars, support beams, and picket fences and gates.
+
 ## [1.21.1-1.3.0.0] - 2026-10-02
 
 ### Added

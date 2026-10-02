@@ -2,6 +2,7 @@ package com.github.mystery2099.woodenAccentsMod.block.custom
 
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import net.minecraft.core.registries.BuiltInRegistries
 import com.github.mystery2099.woodenAccentsMod.block.textureId
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
@@ -31,6 +32,7 @@ class CustomWallBlock(val baseBlock: Block) : WallBlock(BlockBehaviour.Propertie
 
     override fun offerRecipeTo(recipeExporter: RecipeOutput) {
         RecipeProvider.wall(recipeExporter, RecipeCategory.DECORATIONS, this, baseBlock)
+        offerWoodcuttingRecipe(recipeExporter, baseBlock, this)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

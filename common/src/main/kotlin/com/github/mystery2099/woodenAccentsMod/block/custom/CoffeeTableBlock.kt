@@ -23,6 +23,7 @@ import com.github.mystery2099.woodenAccentsMod.data.client.BlockStateVariantUtil
 import com.github.mystery2099.woodenAccentsMod.data.client.BlockStateVariantUtil.withYRotationOf
 import com.github.mystery2099.woodenAccentsMod.data.client.ModModels
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.customGroup
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.*
 import com.github.mystery2099.woodenAccentsMod.item.group.ModItemGroup
@@ -232,6 +233,7 @@ class CoffeeTableBlock(val baseBlock: Block, private val topBlock: Block) :
             requires(topBlock)
             save(recipeExporter)
         }
+        offerWoodcuttingRecipe(recipeExporter, topBlock, this)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

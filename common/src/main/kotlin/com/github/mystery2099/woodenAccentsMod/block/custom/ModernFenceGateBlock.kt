@@ -9,6 +9,7 @@ import com.github.mystery2099.voxlib.rotation.VoxelRotation.rotateLeft
 import com.github.mystery2099.woodenAccentsMod.block.woodType
 import com.github.mystery2099.woodenAccentsMod.data.client.ModModels
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomItemGroupProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomRecipeProvider
@@ -71,6 +72,7 @@ class ModernFenceGateBlock(val baseGate: FenceGateBlock, val baseBlock: Block
             requires(baseBlock)
             save(recipeExporter)
         }
+        offerWoodcuttingRecipe(recipeExporter, baseBlock, this)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

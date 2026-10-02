@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:bamboo_mosaic"
+  },
+  "result": {
+    "count": 1,
+    "id": "wooden_accents_mod:thin_bamboo_mosaic_pillar"
+  }
+}

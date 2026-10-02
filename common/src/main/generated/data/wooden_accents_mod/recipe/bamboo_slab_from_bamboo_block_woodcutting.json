@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:bamboo_block"
+  },
+  "result": {
+    "count": 4,
+    "id": "minecraft:bamboo_slab"
+  }
+}

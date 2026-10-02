@@ -2,6 +2,7 @@ package com.github.mystery2099.woodenAccentsMod.block.custom
 
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import net.minecraft.core.registries.BuiltInRegistries
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
 import com.github.mystery2099.voxlib.combination.VoxelAssembly
@@ -71,6 +72,7 @@ class PlankLadderBlock(val baseBlock: Block) :
             requires(baseBlock)
             save(recipeExporter)
         }
+        offerWoodcuttingRecipe(recipeExporter, baseBlock, this)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

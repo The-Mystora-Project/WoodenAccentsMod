@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:dark_oak_log"
+  },
+  "result": {
+    "count": 4,
+    "id": "wooden_accents_mod:dark_oak_plank_support_beam"
+  }
+}

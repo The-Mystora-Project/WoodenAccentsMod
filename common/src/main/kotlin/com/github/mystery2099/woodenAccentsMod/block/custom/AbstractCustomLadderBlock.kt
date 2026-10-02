@@ -1,6 +1,7 @@
 package com.github.mystery2099.woodenAccentsMod.block.custom
 
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomItemGroupProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomRecipeProvider
@@ -31,6 +32,7 @@ abstract class AbstractCustomLadderBlock(settings: Properties) : LadderBlock(set
             requires(input)
             save(recipeExporter)
         }
+        offerWoodcuttingRecipe(recipeExporter, input, this)
 
     }
 }
