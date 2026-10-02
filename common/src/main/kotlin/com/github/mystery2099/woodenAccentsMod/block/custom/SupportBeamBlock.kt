@@ -52,13 +52,14 @@ class SupportBeamBlock(val baseBlock: Block) : OmnidirectionalConnectingBlock(ru
 
     private fun canConnect(pos: BlockPos, direction: Direction, world: LevelAccessor): Boolean {
         val otherState = world.getBlockState(pos.relative(direction))
-        // Some blocks, like fence gates, expose a solid center face but look wrong with a beam attached.
+        // Anything with a solid center face connects. The tags cover blocks that should connect without one,
+        // and blocks like fence gates that have one but look wrong with a beam attached.
         return (otherState.isFaceSturdy(
             world,
             pos.relative(direction),
             direction.opposite,
             SupportType.CENTER
-        ) || otherState in tag) && otherState !in ModBlockTags.supportBeamsCannotConnect
+        ) || otherState in ModBlockTags.supportBeamsConnectable) && otherState !in ModBlockTags.supportBeamsCannotConnect
     }
 
     override fun canConnectNorthOf(pos: BlockPos, world: LevelAccessor) = canConnect(pos, Direction.NORTH, world)
