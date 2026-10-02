@@ -35,6 +35,30 @@ class ItemTagDataGen(
                 .forEach(::add)
         }
 
+        // Modern fences and gates already burn through the vanilla tags above. Thin pillars and plank flooring
+        // burn for less because one plank cuts into several of them.
+        getOrCreateTagBuilder(ModItemTags.furnaceFuels).apply {
+            listOf(
+                ModBlockTags.chairs,
+                ModBlockTags.tables,
+                ModBlockTags.coffeeTables,
+                ModBlockTags.desks,
+                ModBlockTags.deskDrawers,
+                ModBlockTags.kitchenCounters,
+                ModBlockTags.kitchenCabinets,
+                ModBlockTags.woodenWalls,
+                ModBlockTags.plankLadders,
+                ModBlockTags.connectingLadders,
+                ModBlockTags.simpleLadders,
+                ModBlockTags.thickPillars,
+                ModBlockTags.supportBeams,
+                ModBlockTags.crates,
+                ModBlockTags.thinBookshelves,
+                ModBlockTags.bracketShelves,
+                ModBlockTags.woodCutters,
+            ).forEach { addTag(ModBlockTags.getItemTagFrom(it)) }
+        }
+
         getOrCreateTagBuilder(ModItemTags.unnestable).apply {
             addTag(requireNotNull(ModBlockTags.blockToItemTagMap[ModBlockTags.crates]))
             addOptionalTag(ConventionalItemTags.SHULKER_BOXES.location)

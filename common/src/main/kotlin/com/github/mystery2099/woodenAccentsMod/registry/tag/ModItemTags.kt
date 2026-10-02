@@ -12,6 +12,9 @@ object ModItemTags {
     val chests = "chests".createItemTag("c")
     val unnestable = "unnestable".createItemTag()
 
+    /** Burns for 300 ticks, like vanilla wooden blocks. Items in minecraft:non_flammable_wood are skipped. */
+    val furnaceFuels = "furnace_fuels".createItemTag()
+
     private fun String.createItemTag(namespace: String = WoodenAccentsMod.MOD_ID): TagKey<Item> =
         TagKey.create(Registries.ITEM, this.toIdentifier(namespace))
 

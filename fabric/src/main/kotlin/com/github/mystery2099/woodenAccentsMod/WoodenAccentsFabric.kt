@@ -7,6 +7,8 @@ import com.github.mystery2099.woodenAccentsMod.entity.ModEntities
 import com.github.mystery2099.woodenAccentsMod.item.group.ModCreativeTabs
 import com.github.mystery2099.woodenAccentsMod.recipe.ModRecipeSerializers
 import com.github.mystery2099.woodenAccentsMod.recipe.ModRecipeTypes
+import com.github.mystery2099.woodenAccentsMod.registry.tag.ModBlockTags
+import com.github.mystery2099.woodenAccentsMod.registry.tag.ModItemTags
 import com.github.mystery2099.woodenAccentsMod.registry.component.ModDataComponents
 import com.github.mystery2099.woodenAccentsMod.screen.ModMenuTypes
 import com.github.mystery2099.woodenAccentsMod.stat.ModStats
@@ -29,8 +31,11 @@ object WoodenAccentsFabric : ModInitializer {
         ModStats.register()
         ModCreativeTabs.register()
         allowThinBookshelvesOnChiseledBookshelfEntity()
-        // Matches vanilla's burn time for wooden workstations. NeoForge reads this from a fuel data map instead.
-        FuelRegistry.INSTANCE.add(ModBlocks.woodCutter, 300)
+        // Items cut several to a plank split the plank's 300 ticks so cutting one up never makes more fuel.
+        // NeoForge reads the same burn times from its furnace fuel data map instead.
+        FuelRegistry.INSTANCE.add(ModItemTags.furnaceFuels, 300)
+        FuelRegistry.INSTANCE.add(ModBlockTags.getItemTagFrom(ModBlockTags.thinPillars), 75)
+        FuelRegistry.INSTANCE.add(ModBlockTags.getItemTagFrom(ModBlockTags.plankCarpets), 37)
     }
 
     /**
