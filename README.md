@@ -2,11 +2,11 @@
 
 Vanilla-scale furniture and structural accents for every wood type.
 
-[Modrinth](https://modrinth.com/mod/wooden-accents-mod) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wooden-accents-mod) · [Report a bug](https://github.com/The-Mystora-Project/WoodenAccentsMod/issues) · [Changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/CHANGELOG.md)
+[Modrinth](https://modrinth.com/mod/wooden-accents-mod) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wooden-accents-mod) · [Report a bug](https://github.com/The-Mystora-Project/WoodenAccentsMod/issues) · [Changelog](CHANGELOG.md)
 
 ## About
 
-Wooden Accents adds wooden furniture, storage, and building blocks for Minecraft 1.21.1 on Fabric and NeoForge. I want the pieces to be simple, useful where it makes sense, and easy to work into your own builds.
+Wooden Accents adds wooden furniture, storage, and building blocks for Fabric and NeoForge. I want the pieces to be simple, useful where it makes sense, and easy to work into your own builds.
 
 ![Default chairs](docs/images/chairs-default.webp)
 
@@ -34,7 +34,7 @@ Block tags define many of these connections, so data packs can change which bloc
 - Tables, desks, kitchen counters, and cabinets
 - Coffee tables that stack into a taller version; Silk Touch keeps the tall variant when you pick it up
 - Narrow bookshelves based on vanilla chiseled bookshelves
-- A wood cutter that works like the stonecutter, but for wood
+- A woodcutter that works like the stonecutter, but for wood
 
 ### Storage
 
@@ -51,7 +51,7 @@ Block tags define many of these connections, so data packs can change which bloc
 - Support beams that connect in all six directions
 - Thin and thick pillars that connect vertically
 
-Every block except the wood cutter has a variant for each vanilla wood type in 1.21.1, including bamboo, cherry, crimson, and warped wood.
+Every block except the woodcutter has a variant for each vanilla wood type, including bamboo, cherry, crimson, and warped wood.
 
 ## Using the blocks
 
@@ -61,7 +61,7 @@ The creative tabs group blocks into Furniture, Storage, and Building. Each block
 - Crates keep their nine slots of items when broken. Crates with identical item data can stack up to four. Crates reject items in the mod's `unnestable` tag, including other crates and shulker boxes.
 - Name a crate, desk drawer, or kitchen cabinet in an anvil before placing it. The container uses that name, and its dropped block item keeps it. Drawers and cabinets scatter their contents separately when broken.
 - Place a matching coffee table on top of a short one to make it tall. Silk Touch keeps the tall version; breaking it normally drops two short tables.
-- Use a wood cutter like a stonecutter: put wood in the left slot and pick a result. Recipes use the `wooden_accents_mod:woodcutting` type, which has the same JSON format as `minecraft:stonecutting`, so datapacks can add their own. JEI and REI show them under Woodcutting.
+- Use a woodcutter like a stonecutter: put wood in the left slot and pick a result. It strips logs into planks and cuts planks, logs, and wood into vanilla building pieces, plank flooring, and wooden decorations from this mod. Recipes use the `wooden_accents_mod:woodcutting` type, which has the same JSON format as `minecraft:stonecutting`, so datapacks can add their own. JEI and REI show them under Woodcutting.
 - Attach bracket shelves to solid block faces. Use the left, middle, or right third to swap that slot with your held stack. Power up to three connected shelves facing the same way to swap their contents with the rightmost three, six, or nine hotbar slots. Hoppers insert from above and extract below.
 
 Picket fences, plank flooring, and narrow bookshelves previously had names based on "modern fences," "plank carpets," and "bookshelves." Their block and item IDs are unchanged, so existing worlds and recipes keep working.
@@ -76,61 +76,47 @@ Picket fences, plank flooring, and narrow bookshelves previously had names based
 
 *Narrow bookshelves*
 
-![Experimental chairs](docs/images/chairs-experimental.webp)
+![Bamboo and cherry chairs](docs/images/chairs-experimental.webp)
 
 *Bamboo and cherry chairs*
 
-![Experimental crates](docs/images/crates-experimental.webp)
+![Bamboo and cherry crates](docs/images/crates-experimental.webp)
 
 *Bamboo and cherry crates*
 
-![Experimental picket fences](docs/images/fences-experimental.png)
+![Bamboo and cherry picket fences](docs/images/fences-experimental.png)
 
 *Bamboo and cherry picket fences and fence gates*
 
-## Compatibility
+## Installation
 
-| | |
-|---|---|
-| Minecraft | 1.21.1 |
-| Loader | Fabric or NeoForge (client and server) |
-| Java | 21 or newer |
-
-## Dependencies
+Wooden Accents runs on Fabric or NeoForge, on both clients and dedicated servers. Download it from [Modrinth](https://modrinth.com/mod/wooden-accents-mod/versions), [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wooden-accents-mod), or [GitHub Releases](https://github.com/The-Mystora-Project/WoodenAccentsMod/releases). Each file lists the Minecraft version it supports, and the Modrinth App installs the dependencies for you.
 
 **Required**
 
-- [VoxLib 1.8.0+1.21.1](https://modrinth.com/mod/voxlib) for your loader
-- Fabric: [Fabric Loader 0.19.5 or newer](https://fabricmc.net/use/installer/), [Fabric API 0.116.17+1.21.1 or newer](https://modrinth.com/mod/fabric-api), and [Fabric Language Kotlin 1.14.1+kotlin.2.4.20 or newer](https://modrinth.com/mod/fabric-language-kotlin)
-- NeoForge: [NeoForge 21.1.251 or newer](https://neoforged.net/) and [Kotlin for Forge 5.12.0 or newer](https://modrinth.com/mod/kotlin-for-forge)
+- Java 21 or newer
+- [VoxLib](https://modrinth.com/mod/voxlib) for your loader
+- Fabric: [Fabric Loader](https://fabricmc.net/use/installer/), [Fabric API](https://modrinth.com/mod/fabric-api), and [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin)
+- NeoForge: [NeoForge](https://neoforged.net/) and [Kotlin for Forge](https://modrinth.com/mod/kotlin-for-forge)
 
-**Optional / recommended**
+**Recommended**
 
-- [Shulker Box Tooltip 5.1.9+1.21.1 or newer](https://modrinth.com/mod/shulkerboxtooltip) or [Easy Shulker Boxes](https://modrinth.com/mod/easy-shulker-boxes) for crate inventory previews
+- [Shulker Box Tooltip](https://modrinth.com/mod/shulkerboxtooltip) or [Easy Shulker Boxes](https://modrinth.com/mod/easy-shulker-boxes) for crate inventory previews
 - [Just Enough Items](https://modrinth.com/mod/jei) or [Roughly Enough Items](https://modrinth.com/mod/rei) for recipes
 
-## Installation
+If Minecraft reports a missing or incompatible dependency, install the version named in that error.
 
-1. Install Fabric Loader or NeoForge for Minecraft 1.21.1.
-2. Install the required dependencies above (Modrinth usually pulls them in for you).
-3. Download Wooden Accents from Modrinth, CurseForge, or [GitHub Releases](https://github.com/The-Mystora-Project/WoodenAccentsMod/releases).
-4. Put the mod JARs in your Minecraft `mods` folder.
+## Modpacks
 
-If Minecraft reports a missing or incompatible dependency, use the version named in that error. Do not mix builds made for different Minecraft versions.
-
-## FAQ
-
-**Can I use this in a modpack?** Yes. Credit and a link back are appreciated.
-
-**Where are the recipes?** In JEI or REI, same as any other mod.
+Yes, you can use Wooden Accents in modpacks. Credit and a link back are appreciated.
 
 ## Development
 
-For build instructions and help contributing, see [CONTRIBUTING.md](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md) for build instructions, [RELEASING.md](RELEASING.md) for publishing, and [ROADMAP.md](ROADMAP.md) for what's next.
 
 ## License
 
-Wooden Accents is available under the [Minecraft Mod Public License 1.0.1](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/LICENSE).
+Wooden Accents is available under the [Minecraft Mod Public License 1.0.1](LICENSE).
 
 ## Support
 
