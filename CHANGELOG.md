@@ -44,7 +44,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 
 - Kept crates from accepting vanilla shulker boxes on either loader, even when the Fabric convention tag is absent.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.20.1-1.1.4.2...v1.20.6-1.1.4.4)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.20.1-1.1.4.2...v1.20.6-1.1.4.4)
 
 ## [1.20.6-1.1.4.3] - 2026-09-22
 
@@ -61,7 +61,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 
 - Kept seat riders placed on chair seats by relocating the mount height to the 1.20.6 entity attachment system.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.20.1-1.1.4.2...v1.20.6-1.1.4.3)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.20.1-1.1.4.2...v1.20.6-1.1.4.3)
 
 ## [1.20.1-1.1.4.2] - 2026-09-22
 
@@ -71,7 +71,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 - Standardized shared sources on official Mojang mappings.
 - Deferred the second loader port to the planned NeoForge 1.20.6 update; this alpha release ships Fabric only.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.20.1-1.1.4.1...v1.20.1-1.1.4.2)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.20.1-1.1.4.1...v1.20.1-1.1.4.2)
 
 ## [1.20.1-1.1.4.1] - 2026-09-18
 
@@ -86,7 +86,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 
 - Moved Wooden Accents advancements out of the `minecraft` namespace and into the mod's namespace.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.19.4-1.1.4.0...v1.20.1-1.1.4.1)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.19.4-1.1.4.0...v1.20.1-1.1.4.1)
 
 ## [1.19.4-1.1.4.0] - 2026-09-18
 
@@ -116,7 +116,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 - Tables initialize their connections on placement.
 - Sneak-placing a coffee table against another coffee table places it normally instead of creating a tall coffee table.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.19.4-1.1.3.1...v1.19.4-1.1.4.0)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.19.4-1.1.3.1...v1.19.4-1.1.4.0)
 
 ## [1.19.4-1.1.3.1] - 2026-09-14
 
@@ -125,7 +125,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 - Bracket shelves now map stored items and powered hotbar loadouts from left to right when viewed from the front instead of reversing their order.
 - Empty bracket shelves now clear their displayed items immediately after a powered hotbar swap.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.19.4-1.1.3.0...v1.19.4-1.1.3.1)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.19.4-1.1.3.0...v1.19.4-1.1.3.1)
 
 ## [1.19.4-1.1.3.0] - 2026-09-14
 
@@ -137,7 +137,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 - A comparator placed behind a bracket shelf outputs a signal strength based on which slots are filled: 1 for the first slot, 2 for the second, 4 for the third, up to a maximum of 7.
 - Hoppers can fill bracket shelves from above and empty them from below. Shelves scatter their stored items when broken or when their support block is removed.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.19.4-1.1.2.0...v1.19.4-1.1.3.0)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.19.4-1.1.2.0...v1.19.4-1.1.3.0)
 
 ## [1.19.4-1.1.2.0] - 2026-08-21
 
@@ -153,7 +153,7 @@ This is the first published 1.20.6 build for Fabric and NeoForge.
 
 - Desk drawers now drop their stored contents when broken and preserve custom names on the dropped block item.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.19.4-1.1.1.1...v1.19.4-1.1.2.0)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.19.4-1.1.1.1...v1.19.4-1.1.2.0)
 
 ## [1.19.4-1.1.1.1] - 2024-05-20
 
@@ -165,13 +165,13 @@ Simplified outline shapes for:
 - Modern fence gates
 - Thin pillars
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.19.4-1.1.1.0...v1.19.4-1.1.1.1)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.19.4-1.1.1.0...v1.19.4-1.1.1.1)
 
 ## [1.19.4-1.1.1.0] - 2024-05-20
 
 Implemented an advancement provider and generated new advancements.
 
-[Full changelog](https://github.com/Mystery2099/WoodenAccentsMod/compare/v1.1+1.19.4...v1.19.4-1.1.1.0)
+[Full changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/compare/v1.1+1.19.4...v1.19.4-1.1.1.0)
 
 ## [1.1+1.19.4] - 2024-03-15
 

@@ -1,7 +1,7 @@
 modLoader="kotlinforforge"
 loaderVersion="[5.12,)"
 license="MMPL-1.0.1"
-issueTrackerURL="https://github.com/Mystery2099/WoodenAccentsMod/issues"
+issueTrackerURL="https://github.com/The-Mystora-Project/WoodenAccentsMod/issues"
 
 [[mods]]
 modId="wooden_accents_mod"

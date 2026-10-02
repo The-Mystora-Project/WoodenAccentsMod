@@ -2,7 +2,7 @@
 
 Vanilla-scale furniture and structural accents for every wood type.
 
-[Modrinth](https://modrinth.com/mod/wooden-accents-mod) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wooden-accents-mod) · [Report a bug](https://github.com/Mystery2099/WoodenAccentsMod/issues) · [Changelog](https://github.com/Mystery2099/WoodenAccentsMod/blob/master/CHANGELOG.md)
+[Modrinth](https://modrinth.com/mod/wooden-accents-mod) · [CurseForge](https://www.curseforge.com/minecraft/mc-mods/wooden-accents-mod) · [Report a bug](https://github.com/The-Mystora-Project/WoodenAccentsMod/issues) · [Changelog](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/CHANGELOG.md)
 
 ## About
 
@@ -113,7 +113,7 @@ Picket fences, plank flooring, and narrow bookshelves previously had names based
 
 1. Install Fabric Loader or NeoForge for Minecraft 1.21.1.
 2. Install the required dependencies above (Modrinth usually pulls them in for you).
-3. Download Wooden Accents from Modrinth, CurseForge, or [GitHub Releases](https://github.com/Mystery2099/WoodenAccentsMod/releases).
+3. Download Wooden Accents from Modrinth, CurseForge, or [GitHub Releases](https://github.com/The-Mystora-Project/WoodenAccentsMod/releases).
 4. Put the mod JARs in your Minecraft `mods` folder.
 
 If Minecraft reports a missing or incompatible dependency, use the version named in that error. Do not mix builds made for different Minecraft versions.
@@ -126,11 +126,11 @@ If Minecraft reports a missing or incompatible dependency, use the version named
 
 ## Development
 
-For build instructions and help contributing, see [CONTRIBUTING.md](https://github.com/Mystery2099/WoodenAccentsMod/blob/master/CONTRIBUTING.md).
+For build instructions and help contributing, see [CONTRIBUTING.md](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/CONTRIBUTING.md).
 
 ## License
 
-Wooden Accents is available under the [Minecraft Mod Public License 1.0.1](https://github.com/Mystery2099/WoodenAccentsMod/blob/master/LICENSE).
+Wooden Accents is available under the [Minecraft Mod Public License 1.0.1](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/LICENSE).
 
 ## Support
 

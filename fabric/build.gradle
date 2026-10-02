@@ -222,7 +222,7 @@ publishMods {
 
 	github {
 		accessToken = providers.environmentVariable("GITHUB_TOKEN")
-		repository = "Mystery2099/WoodenAccentsMod"
+		repository = "The-Mystora-Project/WoodenAccentsMod"
 		commitish = providers.environmentVariable("GITHUB_SHA").orElse("master")
 		tagName = "v${project.version}"
 		additionalFiles.from(remapSourcesJar.archiveFile)
