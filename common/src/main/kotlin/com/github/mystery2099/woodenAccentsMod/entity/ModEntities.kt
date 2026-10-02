@@ -15,6 +15,10 @@ object ModEntities : WoodenAccentsModRegistry {
     .sized(0.01f, 0.01f)
     .clientTrackingRange(10)
     .updateInterval(20)
+    // Seats are transient: they discard themselves without a rider or chair and carry no
+    // save data, so skip persistence. This also avoids the DFU "No data fixer registered"
+    // warning for non-vanilla entity ids.
+    .noSave()
     .build("wooden_accents_mod:seat")
 
     override fun register() {
