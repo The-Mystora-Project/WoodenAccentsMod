@@ -11,6 +11,7 @@ Versions look like `<minecraft_version>-<content_version>`, for example `1.21.1-
 - Bump the second number (`1.3.0.0` to `1.4.0.0`) for big feature updates, like a new block family or workstation.
 - Bump the third number (`1.3.0.0` to `1.3.1.0`) for smaller additions, like new recipes or tweaks to existing blocks.
 - Bump the last number (`1.3.1.0` to `1.3.1.1`) for fixes, ports of the same content to another Minecraft version, and any other rebuild.
+- Bump once per release, not once per PR. After a release, the first change bumps the version and later changes add to that same changelog section until it ships. Unreleased versions can be renumbered or merged freely.
 - Never republish a version. Every published build gets its own.
 - Don't put loader names or `-beta` suffixes in the version. Fabric and NeoForge builds share a version, and the release type handles stability.
 

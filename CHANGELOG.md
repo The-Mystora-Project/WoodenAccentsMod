@@ -2,40 +2,32 @@
 
 This file tracks player-visible changes and anything maintainers need to know before publishing a release. Release headings must match `mod_version` in `gradle.properties` so the publishing workflow can use the section as its release notes.
 
-## [1.21.1-1.3.1.0] - 2026-10-02
+## [1.21.1-1.3.0.0] - 2026-10-02
 
 ### Added
 
+- Added the Woodcutter, a wooden take on the stonecutter. Craft it with an iron ingot over three planks of any wood.
+- Added the `wooden_accents_mod:woodcutting` recipe type so datapacks and other mods can add their own woodcutter recipes. It uses the same JSON format as `minecraft:stonecutting`.
+- Woodcutting recipes unlock like stonecutting ones do, complete with a recipe toast showing the woodcutter.
+- Woodcutting recipes show up in JEI and REI on both loaders, with the woodcutter listed as their workstation. JEI can also move ingredients into the woodcutter.
+- Vanilla planks can be cut into their matching stairs and slabs, and bamboo planks into bamboo mosaic.
 - Added woodcutter recipes for vanilla fences, gates, doors, trapdoors, buttons, pressure plates, signs, and bamboo mosaic stairs and slabs.
 - Logs, wood, stems, hyphae, and bamboo blocks can be stripped or cut into planks in the woodcutter.
+- Added woodcutter recipes for chairs, tables, coffee tables, desks, counters, shelves, narrow bookshelves, ladders, walls, pillars, support beams, and picket fences and gates. Thin pillars yield four per plank.
 - Every plank-based woodcutting result can also be cut directly from matching logs and wood, including stripped variants. Direct recipes yield four times the plank recipe output, or twice for bamboo blocks.
-- Added woodcutter recipes for chairs, tables, coffee tables, desks, counters, shelves, narrow bookshelves, ladders, walls, pillars, support beams, and picket fences and gates.
-- Wooden Accents blocks burn in furnaces like vanilla wooden blocks. Thin pillars and plank flooring burn for less since a plank cuts into several of them. Crimson and warped variants don't burn.
+- Wooden Accents blocks burn in furnaces like vanilla wooden blocks. The woodcutter burns for 300 ticks like other wooden workstations. Thin pillars and plank flooring burn for less since a plank cuts into several of them. Crimson and warped variants don't burn.
 - Added the `tall_coffee_table_connectable`, `support_beams_connectable`, and `support_beams_cannot_connect` block tags so data packs can change what tall coffee tables and support beams connect to. Tables now connect to anything in the `tables` tag.
 - Picket fences and gates are now in the vanilla `wooden_fences` and `fence_gates` tags and in `c:fence_gates/wooden`. Wooden walls are in the `walls` item tag.
 
 ### Changed
 
-- Thin pillars yield four per woodcutting recipe. Matching log and wood inputs for plank pillars yield sixteen, or eight from bamboo blocks.
 - Plank flooring now comes from woodcutting instead of a crafting recipe with paper. One plank yields eight flooring pieces. Matching logs and wood yield thirty-two, and bamboo blocks yield sixteen.
-- Renamed the Wood Cutter to Woodcutter to match vanilla's Stonecutter.
 - Picket fences now connect to vanilla wooden fences, and vanilla wooden fences connect back.
 - Plank flooring plays the step sound of the block below it, like wool carpets.
 
 ### Fixed
 
 - Kitchen cabinets can no longer be crafted with ender chests. Crates and desk drawers now accept wooden chests from other mods.
-
-## [1.21.1-1.3.0.0] - 2026-10-02
-
-### Added
-
-- Added the Wood Cutter, a wooden take on the stonecutter. Craft it with an iron ingot over three planks of any wood.
-- Added the `wooden_accents_mod:woodcutting` recipe type so datapacks and other mods can add their own wood cutter recipes. It uses the same JSON format as `minecraft:stonecutting`.
-- Vanilla planks can be cut into their matching stairs and slabs, and bamboo planks into bamboo mosaic.
-- Woodcutting recipes unlock like stonecutting ones do, complete with a recipe toast showing the wood cutter.
-- Woodcutting recipes show up in JEI and REI on both loaders, with the wood cutter listed as their workstation. JEI can also move ingredients into the wood cutter.
-- The wood cutter burns in furnaces for 300 ticks, like other wooden workstations.
 
 ## [1.21.1-1.2.0.0] - 2026-09-25
 
