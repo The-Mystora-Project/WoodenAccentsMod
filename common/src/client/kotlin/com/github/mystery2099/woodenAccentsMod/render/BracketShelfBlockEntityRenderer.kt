@@ -69,7 +69,7 @@ class BracketShelfBlockEntityRenderer(context: BlockEntityRendererProvider.Conte
     private fun itemYaw(facing: Direction): Float = -facing.clockWise.toYRot()
 
     companion object {
-        /** Height of the shelf plank's top face. */
+        /** Y position used to render shelf items. */
         private const val ITEM_Y = 0.875
 
         /** Moves items toward the wall, clear of the shelf's front edge. */

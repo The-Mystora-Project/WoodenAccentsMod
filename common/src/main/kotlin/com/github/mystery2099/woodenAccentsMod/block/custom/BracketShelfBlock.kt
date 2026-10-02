@@ -166,7 +166,9 @@ class BracketShelfBlock(val baseBlock: Block) : AbstractWaterloggableBlock(
     override fun newBlockEntity(pos: BlockPos, state: BlockState): BlockEntity =
         BracketShelfBlockEntity(pos, state)
 
-    /** Drains water with a bucket or swaps the held stack with the selected slot. */
+    /**
+     * Drains water with a bucket. Otherwise, swaps with the selected slot or, when powered, with the hotbar.
+     */
     override fun useItemOn(
         stack: ItemStack,
         state: BlockState,
