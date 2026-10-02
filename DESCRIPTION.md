@@ -73,8 +73,8 @@ Check the [download page](https://modrinth.com/mod/wooden-accents-mod/versions) 
 ### Required Dependencies
 
 * [VoxLib](https://modrinth.com/mod/voxlib) for your loader
-* Fabric: [Fabric API](https://modrinth.com/mod/fabric-api) and [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin)
-* NeoForge: [Kotlin for Forge](https://modrinth.com/mod/kotlin-for-forge)
+* Fabric: [Fabric Loader](https://fabricmc.net/use/installer/), [Fabric API](https://modrinth.com/mod/fabric-api), and [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin)
+* NeoForge: [NeoForge](https://neoforged.net/) and [Kotlin for Forge](https://modrinth.com/mod/kotlin-for-forge)
 
 Use versions that match the Wooden Accents file you're installing. If you're installing through the Modrinth App, it should handle these dependencies for you anyway.
 
