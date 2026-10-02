@@ -7,6 +7,7 @@ import com.github.mystery2099.woodenAccentsMod.item.CustomBlockItem
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.FenceGateBlock
+import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.properties.WoodType
 import net.minecraft.data.models.model.ModelLocationUtils
 import net.minecraft.data.models.model.TextureMapping
@@ -213,6 +214,9 @@ object ModBlocks : WoodenAccentsModRegistry {
         DeskDrawerBlock(Blocks.WARPED_STEM, Blocks.STRIPPED_WARPED_STEM).registerAs("warped_desk_drawer")
     val crimsonDeskDrawer =
         DeskDrawerBlock(Blocks.CRIMSON_STEM, Blocks.STRIPPED_CRIMSON_STEM).registerAs("crimson_desk_drawer")
+
+    val woodCutter = WoodCutterBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_PLANKS).noOcclusion())
+        .registerAs("wood_cutter")
 
     // Kitchen counters
     val oakKitchenCounter = KitchenCounterBlock(Blocks.OAK_PLANKS, Blocks.OAK_LOG).registerAs("oak_kitchen_counter")

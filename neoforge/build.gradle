@@ -16,6 +16,9 @@ base {
 repositories {
 	maven { url = uri("https://thedarkcolour.github.io/KotlinForForge/") }
 	maven { url = uri("https://maven.misterpemodder.com/libs-release/") }
+	maven { url = uri("https://maven.blamejared.com/") }
+	maven { url = uri("https://maven.shedaniel.me/") }
+	maven { url = uri("https://maven.architectury.dev/") }
 	exclusiveContent {
 		forRepository {
 			maven {
@@ -110,6 +113,10 @@ dependencies {
 
 	implementation("com.misterpemodder:shulkerboxtooltip-neoforge:${project.shulker_box_tooltip_version}") { transitive = false }
 	implementation "maven.modrinth:voxlib:${project.voxlib_neoforge_version}"
+	compileOnly "mezz.jei:jei-${project.minecraft_version}-common-api:${project.jei_version}"
+	compileOnly "me.shedaniel:RoughlyEnoughItems-api-neoforge:${project.rei_version}"
+	// The full REI jar only provides the @REIPluginClient annotation NeoForge scans for.
+	compileOnly("me.shedaniel:RoughlyEnoughItems-neoforge:${project.rei_version}") { transitive = false }
 }
 
 processResources {

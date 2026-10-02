@@ -14,6 +14,9 @@ base {
 
 repositories {
 	mavenCentral()
+	maven { url = uri("https://maven.blamejared.com/") }
+	maven { url = uri("https://maven.shedaniel.me/") }
+	maven { url = uri("https://maven.architectury.dev/") }
 	exclusiveContent {
 		forRepository {
 			maven {
@@ -33,6 +36,9 @@ dependencies {
 	mappings loom.officialMojangMappings()
 	// Shape welded-helpers for runtime visuals; loader-neutral jar, compile only.
 	modCompileOnly "maven.modrinth:voxlib:${project.voxlib_version}"
+	// Recipe viewer plugins live in the client sourceset; each loader supplies the real mod at runtime.
+	compileOnly "mezz.jei:jei-${project.minecraft_version}-common-api:${project.jei_version}"
+	modCompileOnly "me.shedaniel:RoughlyEnoughItems-api:${project.rei_version}"
 }
 
 loom {

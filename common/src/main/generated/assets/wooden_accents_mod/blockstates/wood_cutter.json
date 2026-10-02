@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "wooden_accents_mod:block/wood_cutter",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "wooden_accents_mod:block/wood_cutter"
+    },
+    "facing=south": {
+      "model": "wooden_accents_mod:block/wood_cutter",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "wooden_accents_mod:block/wood_cutter",
+      "y": 270
+    }
+  }
+}

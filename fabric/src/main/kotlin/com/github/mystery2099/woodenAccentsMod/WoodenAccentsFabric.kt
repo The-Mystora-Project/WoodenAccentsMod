@@ -5,8 +5,13 @@ import com.github.mystery2099.woodenAccentsMod.block.custom.ThinBookshelfBlock
 import com.github.mystery2099.woodenAccentsMod.block.entity.ModBlockEntities
 import com.github.mystery2099.woodenAccentsMod.entity.ModEntities
 import com.github.mystery2099.woodenAccentsMod.item.group.ModCreativeTabs
+import com.github.mystery2099.woodenAccentsMod.recipe.ModRecipeSerializers
+import com.github.mystery2099.woodenAccentsMod.recipe.ModRecipeTypes
 import com.github.mystery2099.woodenAccentsMod.registry.component.ModDataComponents
+import com.github.mystery2099.woodenAccentsMod.screen.ModMenuTypes
+import com.github.mystery2099.woodenAccentsMod.stat.ModStats
 import net.fabricmc.api.ModInitializer
+import net.fabricmc.fabric.api.registry.FuelRegistry
 import net.fabricmc.fabric.api.`object`.builder.v1.block.entity.FabricBlockEntityType
 import net.minecraft.world.level.block.entity.BlockEntityType
 
@@ -18,8 +23,14 @@ object WoodenAccentsFabric : ModInitializer {
         ModBlocks.registerItems()
         ModBlockEntities.register()
         ModEntities.register()
+        ModRecipeTypes.register()
+        ModRecipeSerializers.register()
+        ModMenuTypes.register()
+        ModStats.register()
         ModCreativeTabs.register()
         allowThinBookshelvesOnChiseledBookshelfEntity()
+        // Matches vanilla's burn time for wooden workstations. NeoForge reads this from a fuel data map instead.
+        FuelRegistry.INSTANCE.add(ModBlocks.woodCutter, 300)
     }
 
     /**
