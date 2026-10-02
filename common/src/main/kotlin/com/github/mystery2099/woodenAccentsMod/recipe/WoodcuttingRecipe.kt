@@ -7,7 +7,7 @@ import net.minecraft.world.item.crafting.SingleItemRecipe
 import net.minecraft.world.item.crafting.SingleRecipeInput
 import net.minecraft.world.level.Level
 
-/** The wood cutter's equivalent of [net.minecraft.world.item.crafting.StonecutterRecipe]. */
+/** The woodcutter's equivalent of [net.minecraft.world.item.crafting.StonecutterRecipe]. */
 class WoodcuttingRecipe(group: String, ingredient: Ingredient, result: ItemStack) :
     SingleItemRecipe(ModRecipeTypes.woodcutting, ModRecipeSerializers.woodcutting, group, ingredient, result) {
 

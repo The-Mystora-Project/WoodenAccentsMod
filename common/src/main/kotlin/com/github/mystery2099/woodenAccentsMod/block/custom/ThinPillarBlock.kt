@@ -35,7 +35,7 @@ class ThinPillarBlock(baseBlock: Block) : AbstractPillarBlock(baseBlock, shape) 
             primaryInput = this.baseBlock,
             secondaryInput = Items.STICK
         )
-        offerPillarWoodcuttingRecipe(recipeExporter)
+        offerPillarWoodcuttingRecipe(recipeExporter, count = 4)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

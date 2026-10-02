@@ -139,8 +139,8 @@ abstract class AbstractPillarBlock(val baseBlock: Block, private val pillarShape
         }
     }
 
-    fun offerPillarWoodcuttingRecipe(exporter: RecipeOutput) {
-        offerWoodcuttingRecipe(exporter, baseBlock, this)
+    fun offerPillarWoodcuttingRecipe(exporter: RecipeOutput, count: Int = 1) {
+        offerWoodcuttingRecipe(exporter, baseBlock, this, count)
     }
 
     fun genBlockStateModelSupplier(

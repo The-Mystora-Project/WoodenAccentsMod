@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:oak_planks"
+  },
+  "result": {
+    "count": 2,
+    "id": "wooden_accents_mod:oak_plank_carpet"
+  }
+}

@@ -49,7 +49,21 @@ def check_recipes():
         require(source.startswith("minecraft:"), f"{path.name}: unsupported input namespace")
         require(wood_type(source) is not None, f"{path.name}: input is not a supported wood type")
         require(wood_type(source) == wood_type(result), f"{path.name}: source and result wood types differ")
-        require(type(count) is int and count in (1, 2, 4, 8), f"{path.name}: unexpected output count {count}")
+        require(type(count) is int and count in (1, 2, 4, 8, 16), f"{path.name}: unexpected output count {count}")
+        result_path = result.split(":", 1)[1]
+        if result.startswith("wooden_accents_mod:"):
+            if result_path.startswith("thin_") and result_path.endswith("_pillar"):
+                is_plank_input = source.endswith("_planks") or source == "minecraft:bamboo_mosaic"
+                is_plank_pillar = "_plank_" in result_path or "_mosaic_" in result_path
+                if is_plank_input or not is_plank_pillar:
+                    require(count == 4, f"{path.name}: thin pillars must yield four from their base wood")
+            if result_path.endswith("_carpet"):
+                require(not (DATA_DIR / "recipe" / f"{result_path}.json").exists(),
+                        f"{result_path}: flooring still has a crafting recipe")
+                if source.endswith("_planks") or source == "minecraft:bamboo_mosaic":
+                    require(count == 2, f"{path.name}: flooring must yield two per plank")
+            if result_path.endswith("_bookshelf") and source.endswith("_planks"):
+                require(count == 1, f"{path.name}: narrow bookshelves must yield one per plank")
         pair = (source, result)
         require(pair not in conversions, f"{path.name}: duplicate conversion {pair}")
         conversions[pair] = count
@@ -82,6 +96,9 @@ def check_recipes():
             result = f"minecraft:{wood}_{variant}"
             require(conversions.get((planks, result)) == (2 if variant == "slab" else 1),
                     f"Missing or incorrect vanilla plank recipe: {planks} -> {result}")
+        for suffix, expected in (("plank_carpet", 2), ("plank_bookshelf", 1)):
+            result = f"wooden_accents_mod:{wood}_{suffix}"
+            require(conversions.get((planks, result)) == expected, f"Missing or incorrect recipe: {planks} -> {result}")
         inputs, multiplier = log_inputs(wood)
         for log in inputs:
             require(conversions.get((log, planks)) == multiplier, f"Incorrect plank yield from {log}")
