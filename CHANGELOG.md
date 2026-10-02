@@ -10,12 +10,21 @@ This file tracks player-visible changes and anything maintainers need to know be
 - Logs, wood, stems, hyphae, and bamboo blocks can be stripped or cut into planks in the woodcutter.
 - Every plank-based woodcutting result can also be cut directly from matching logs and wood, including stripped variants. Direct recipes yield four times the plank recipe output, or twice for bamboo blocks.
 - Added woodcutter recipes for chairs, tables, coffee tables, desks, counters, shelves, narrow bookshelves, ladders, walls, pillars, support beams, and picket fences and gates.
+- Wooden Accents blocks burn in furnaces like vanilla wooden blocks. Thin pillars and plank flooring burn for less since a plank cuts into several of them. Crimson and warped variants don't burn.
+- Added the `tall_coffee_table_connectable`, `support_beams_connectable`, and `support_beams_cannot_connect` block tags so data packs can change what tall coffee tables and support beams connect to. Tables now connect to anything in the `tables` tag.
+- Picket fences and gates are now in the vanilla `wooden_fences` and `fence_gates` tags and in `c:fence_gates/wooden`. Wooden walls are in the `walls` item tag.
 
 ### Changed
 
 - Thin pillars yield four per woodcutting recipe. Matching log and wood inputs for plank pillars yield sixteen, or eight from bamboo blocks.
 - Plank flooring now comes from woodcutting instead of a crafting recipe with paper. One plank yields eight flooring pieces. Matching logs and wood yield thirty-two, and bamboo blocks yield sixteen.
 - Renamed the Wood Cutter to Woodcutter to match vanilla's Stonecutter.
+- Picket fences now connect to vanilla wooden fences, and vanilla wooden fences connect back.
+- Plank flooring plays the step sound of the block below it, like wool carpets.
+
+### Fixed
+
+- Kitchen cabinets can no longer be crafted with ender chests. Crates and desk drawers now accept wooden chests from other mods.
 
 ## [1.21.1-1.3.0.0] - 2026-10-02
 

@@ -66,6 +66,22 @@ The creative tabs group blocks into Furniture, Storage, and Building. Each block
 
 Picket fences, plank flooring, and narrow bookshelves previously had names based on "modern fences," "plank carpets," and "bookshelves." Their block and item IDs are unchanged, so existing worlds and recipes keep working.
 
+## Data pack tags
+
+Every block type has its own block and item tag, like `wooden_accents_mod:chairs` or `wooden_accents_mod:tables`. Tables, desks, desk drawers, and kitchen counters connect to anything in their tag, so you can add your own blocks to them.
+
+These tags control connections and other behavior:
+
+- `thin_pillars_connectable` and `thick_pillars_connectable`: blocks pillars connect to vertically
+- `modern_fence_connectable`: blocks picket fences connect to, on top of any solid face
+- `support_beams_connectable`: blocks support beams connect to even without a solid face
+- `support_beams_cannot_connect`: blocks support beams never connect to, even with a solid face. Fence gates by default.
+- `tall_coffee_table_connectable`: blocks tall coffee tables connect to. Scaffolding by default.
+- `unnestable` (item tag): items crates won't hold
+- `furnace_fuels` (item tag): items that burn for 300 ticks. Anything in `minecraft:non_flammable_wood` is skipped.
+
+Picket fences and gates are also in the vanilla `wooden_fences` and `fence_gates` tags, and in `c:fence_gates/wooden`, so they work with anything that uses those.
+
 ## Gallery
 
 ![Default picket fences](docs/images/fences-default.webp)
