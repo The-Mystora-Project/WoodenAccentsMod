@@ -7,7 +7,7 @@
       "item": "minecraft:crimson_planks"
     },
     "O": {
-      "tag": "c:chests"
+      "tag": "c:chests/wooden"
     },
     "_": {
       "item": "minecraft:crimson_stem"

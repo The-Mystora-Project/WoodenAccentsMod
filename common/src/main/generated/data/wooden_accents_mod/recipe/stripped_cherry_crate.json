@@ -10,7 +10,7 @@
       "item": "minecraft:stripped_cherry_log"
     },
     "u": {
-      "item": "minecraft:chest"
+      "tag": "c:chests/wooden"
     }
   },
   "pattern": [

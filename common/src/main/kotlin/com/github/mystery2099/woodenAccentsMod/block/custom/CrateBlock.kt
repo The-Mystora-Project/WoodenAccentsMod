@@ -11,6 +11,7 @@ import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requir
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.*
 import com.github.mystery2099.woodenAccentsMod.item.group.ModItemGroup
 import com.github.mystery2099.woodenAccentsMod.registry.tag.ModBlockTags
+import com.github.mystery2099.woodenAccentsMod.registry.tag.ModItemTags
 import com.mojang.serialization.MapCodec
 import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.registries.BuiltInRegistries
@@ -32,7 +33,6 @@ import net.minecraft.world.Container
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.Items
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.parameters.LootContextParams
@@ -210,12 +210,12 @@ class CrateBlock(val baseBlock: Block, private val edgeBlock: Block) :
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, this).apply {
             define('n', baseBlock)
             define('t', edgeBlock)
-            define('u', Items.CHEST)
+            define('u', ModItemTags.woodenChests)
             pattern("tnt")
             pattern("nun")
             pattern("tnt")
             customGroup(this@CrateBlock, "crates")
-            requires(Items.CHEST)
+            requires(ModItemTags.woodenChests)
             save(recipeExporter)
         }
     }

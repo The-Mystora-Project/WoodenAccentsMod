@@ -204,7 +204,7 @@ class KitchenCabinetBlock(val baseBlock: Block, private val topBlock: Block) :
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, this, 4).apply {
             define('#', baseBlock)
             define('_', topBlock)
-            define('O', ModItemTags.chests)
+            define('O', ModItemTags.woodenChests)
             pattern("___")
             pattern("#O#")
             pattern("###")

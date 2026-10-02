@@ -1,7 +1,16 @@
 {
+  "remove": [
+    "#minecraft:non_flammable_wood"
+  ],
   "values": {
-    "wooden_accents_mod:wood_cutter": {
+    "#wooden_accents_mod:furnace_fuels": {
       "burn_time": 300
+    },
+    "#wooden_accents_mod:thin_pillars": {
+      "burn_time": 75
+    },
+    "#wooden_accents_mod:plank_carpets": {
+      "burn_time": 37
     }
   }
 }

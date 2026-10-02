@@ -26,7 +26,6 @@ import net.minecraft.data.models.model.*
 import net.minecraft.data.recipes.ShapedRecipeBuilder
 import net.minecraft.world.item.Items
 import net.minecraft.data.recipes.RecipeCategory
-import net.minecraft.tags.BlockTags
 import net.minecraft.tags.TagKey
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
@@ -53,13 +52,14 @@ class SupportBeamBlock(val baseBlock: Block) : OmnidirectionalConnectingBlock(ru
 
     private fun canConnect(pos: BlockPos, direction: Direction, world: LevelAccessor): Boolean {
         val otherState = world.getBlockState(pos.relative(direction))
-        // Fence gates expose a solid center face but should not anchor support beams.
+        // Anything with a solid center face connects. The tags cover blocks that should connect without one,
+        // and blocks like fence gates that have one but look wrong with a beam attached.
         return (otherState.isFaceSturdy(
             world,
             pos.relative(direction),
             direction.opposite,
             SupportType.CENTER
-        ) || otherState in tag) && otherState !in BlockTags.FENCE_GATES
+        ) || otherState in ModBlockTags.supportBeamsConnectable) && otherState !in ModBlockTags.supportBeamsCannotConnect
     }
 
     override fun canConnectNorthOf(pos: BlockPos, world: LevelAccessor) = canConnect(pos, Direction.NORTH, world)

@@ -23,6 +23,7 @@ import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.Custom
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomTagProvider
 import com.github.mystery2099.woodenAccentsMod.item.group.ModItemGroup
 import com.github.mystery2099.woodenAccentsMod.registry.tag.ModBlockTags
+import com.github.mystery2099.woodenAccentsMod.registry.tag.ModItemTags
 import com.github.mystery2099.woodenAccentsMod.state.property.ModProperties
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.RenderShape
@@ -39,7 +40,6 @@ import net.minecraft.world.entity.player.Player
 import net.minecraft.world.Container
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.item.Items
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.LootItem
@@ -344,7 +344,7 @@ class DeskDrawerBlock(private val edgeBlock: Block, val baseBlock: Block) :
         ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, this, 4).apply {
             define('|', edgeBlock)
             define('_', baseBlock)
-            define('#', Items.CHEST)
+            define('#', ModItemTags.woodenChests)
             pattern("___")
             pattern("|#|")
             pattern("| |")

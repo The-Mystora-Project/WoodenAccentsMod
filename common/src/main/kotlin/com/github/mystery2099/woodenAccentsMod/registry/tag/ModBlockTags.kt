@@ -39,11 +39,14 @@ object ModBlockTags {
     val modernFenceGates = "modern_fence_gates".toBlockTag().createMatchingItemTag()
 
     val supportBeams = "support_beams".toBlockTag().createMatchingItemTag()
+    val supportBeamsConnectable = "support_beams_connectable".toBlockTag()
+    val supportBeamsCannotConnect = "support_beams_cannot_connect".toBlockTag()
     val crates = "crates".toBlockTag().createMatchingItemTag()
 
     // Living room
     val tables = "tables".toBlockTag().createMatchingItemTag()
     val coffeeTables = "coffee_tables".toBlockTag().createMatchingItemTag()
+    val tallCoffeeTableConnectable = "tall_coffee_table_connectable".toBlockTag()
     val thinBookshelves = "thin_bookshelves".toBlockTag().createMatchingItemTag()
     val plankCarpets = "plank_carpets".toBlockTag().createMatchingItemTag()
     val bracketShelves = "bracket_shelves".toBlockTag().createMatchingItemTag()
