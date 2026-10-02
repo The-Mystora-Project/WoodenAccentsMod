@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:spruce_wood"
+  },
+  "result": {
+    "count": 4,
+    "id": "wooden_accents_mod:spruce_plank_table"
+  }
+}

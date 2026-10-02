@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:stripped_acacia_log"
+  },
+  "result": {
+    "count": 16,
+    "id": "wooden_accents_mod:thin_acacia_plank_pillar"
+  }
+}

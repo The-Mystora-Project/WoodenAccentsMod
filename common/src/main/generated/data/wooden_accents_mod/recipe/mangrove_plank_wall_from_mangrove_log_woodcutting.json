@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:mangrove_log"
+  },
+  "result": {
+    "count": 4,
+    "id": "wooden_accents_mod:mangrove_plank_wall"
+  }
+}

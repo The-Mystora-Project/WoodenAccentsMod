@@ -5,8 +5,7 @@ import com.mojang.serialization.codecs.RecordCodecBuilder
 import net.minecraft.core.registries.BuiltInRegistries
 import com.github.mystery2099.woodenAccentsMod.block.modelId
 import com.github.mystery2099.woodenAccentsMod.block.textureId
-import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.customGroup
-import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomItemGroupProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomRecipeProvider
@@ -20,9 +19,6 @@ import net.minecraft.data.models.BlockModelGenerators
 import net.minecraft.data.models.model.ModelTemplates
 import net.minecraft.data.models.model.TextureSlot
 import net.minecraft.data.models.model.TextureMapping
-import net.minecraft.data.recipes.ShapedRecipeBuilder
-import net.minecraft.world.item.Items
-import net.minecraft.data.recipes.RecipeCategory
 import net.minecraft.data.recipes.RecipeOutput
 import net.minecraft.tags.TagKey
 import net.minecraft.world.level.block.state.BlockBehaviour
@@ -44,15 +40,7 @@ class CustomCarpetBlock(val baseBlock: Block) : CarpetBlock(
         ).apply(instance, ::CustomCarpetBlock)
     }
     override fun offerRecipeTo(recipeExporter: RecipeOutput) {
-        ShapedRecipeBuilder.shaped(RecipeCategory.DECORATIONS, this, 3).apply {
-            define('#', baseBlock)
-            define('_', Items.PAPER)
-            pattern("##")
-            pattern("_ ")
-            customGroup(this@CustomCarpetBlock, "carpets")
-            requires(baseBlock)
-            save(recipeExporter)
-        }
+        offerWoodcuttingRecipe(recipeExporter, baseBlock, this, count = 8)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

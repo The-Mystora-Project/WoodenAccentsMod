@@ -47,6 +47,7 @@ class ThickPillarBlock(baseBlock: Block) : AbstractPillarBlock(baseBlock, shape)
 
     override fun offerRecipeTo(recipeExporter: RecipeOutput) {
         this.offerRecipe(exporter = recipeExporter, outputNum = 6, primaryInput = baseBlock, secondaryInput = baseBlock)
+        offerPillarWoodcuttingRecipe(recipeExporter)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

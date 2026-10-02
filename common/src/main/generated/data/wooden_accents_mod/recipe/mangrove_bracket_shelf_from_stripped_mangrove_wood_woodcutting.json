@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:stripped_mangrove_wood"
+  },
+  "result": {
+    "count": 4,
+    "id": "wooden_accents_mod:mangrove_bracket_shelf"
+  }
+}

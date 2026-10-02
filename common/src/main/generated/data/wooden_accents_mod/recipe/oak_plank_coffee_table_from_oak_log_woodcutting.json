@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:oak_log"
+  },
+  "result": {
+    "count": 4,
+    "id": "wooden_accents_mod:oak_plank_coffee_table"
+  }
+}

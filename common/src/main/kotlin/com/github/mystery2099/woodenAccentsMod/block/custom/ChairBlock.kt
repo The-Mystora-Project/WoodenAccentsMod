@@ -8,6 +8,7 @@ import com.github.mystery2099.voxlib.rotation.VoxelRotation.rotateRight
 import com.github.mystery2099.woodenAccentsMod.block.BlockStateConfigurer.Companion.with
 import com.github.mystery2099.woodenAccentsMod.data.client.ModModels
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.customGroup
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomItemGroupProvider
@@ -169,6 +170,7 @@ class ChairBlock(settings: Properties, val baseBlock: Block) : HorizontalDirecti
             requires(baseBlock)
             save(recipeExporter)
         }
+        offerWoodcuttingRecipe(recipeExporter, baseBlock, this)
     }
 
     override fun codec(): MapCodec<ChairBlock> = RecordCodecBuilder.mapCodec { instance ->

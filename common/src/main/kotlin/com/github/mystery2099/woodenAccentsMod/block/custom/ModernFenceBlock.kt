@@ -13,6 +13,7 @@ import com.github.mystery2099.woodenAccentsMod.block.itemModelId
 import com.github.mystery2099.woodenAccentsMod.block.textureId
 import com.github.mystery2099.woodenAccentsMod.data.client.ModModels
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomItemGroupProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomRecipeProvider
@@ -74,6 +75,7 @@ class ModernFenceBlock(val settingsBlock: Block, private val sideBlock: Block, p
             requires(postBlock)
             save(recipeExporter)
         }
+        offerWoodcuttingRecipe(recipeExporter, postBlock, this)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {

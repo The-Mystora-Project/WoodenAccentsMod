@@ -15,6 +15,7 @@ import com.github.mystery2099.woodenAccentsMod.data.client.BlockStateVariantUtil
 import com.github.mystery2099.woodenAccentsMod.data.client.BlockStateVariantUtil.withYRotationOf
 import com.github.mystery2099.woodenAccentsMod.data.client.ModModels
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.customGroup
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomItemGroupProvider
@@ -235,6 +236,7 @@ class DeskBlock(val baseBlock: Block, private val topBlock: Block) :
             requires(baseBlock)
             save(recipeExporter)
         }
+        offerWoodcuttingRecipe(recipeExporter, topBlock, this)
     }
 
     companion object {

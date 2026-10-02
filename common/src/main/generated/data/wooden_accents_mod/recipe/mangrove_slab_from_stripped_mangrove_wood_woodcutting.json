@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:stripped_mangrove_wood"
+  },
+  "result": {
+    "count": 8,
+    "id": "minecraft:mangrove_slab"
+  }
+}

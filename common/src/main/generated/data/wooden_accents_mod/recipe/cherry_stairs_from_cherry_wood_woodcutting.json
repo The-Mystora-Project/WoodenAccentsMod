@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:cherry_wood"
+  },
+  "result": {
+    "count": 4,
+    "id": "minecraft:cherry_stairs"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "type": "wooden_accents_mod:woodcutting",
+  "ingredient": {
+    "item": "minecraft:crimson_hyphae"
+  },
+  "result": {
+    "count": 16,
+    "id": "wooden_accents_mod:thin_crimson_plank_pillar"
+  }
+}

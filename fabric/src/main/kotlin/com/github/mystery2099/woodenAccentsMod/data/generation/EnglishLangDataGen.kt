@@ -26,14 +26,15 @@ class EnglishLangDataGen(dataOutput: FabricDataOutput, registryLookup: Completab
                 add(group.path.toIdentifier().toLanguageKey(), "Wooden Accents: $name")
             }
             add("container.crate.more", "and %s more...")
-            add("container.wooden_accents_mod.wood_cutter", "Wood Cutter")
+            add("container.wooden_accents_mod.wood_cutter", "Woodcutter")
             add("category.wooden_accents_mod.woodcutting", "Woodcutting")
-            add(ModStats.interactWithWoodCutter.toLanguageKey("stat"), "Interactions with Wood Cutter")
+            add(ModStats.interactWithWoodCutter.toLanguageKey("stat"), "Interactions with Woodcutter")
         }
     }
 
     private fun String.toDisplayName(): String {
         val displayPath = when {
+            this == "wood_cutter" -> "woodcutter"
             startsWith("modern_") -> removePrefix("modern_").replace("fence", "picket_fence")
             endsWith("_plank_carpet") -> replace("_plank_carpet", "_plank_flooring")
             endsWith("_carpet") -> replace("_carpet", "_flooring")

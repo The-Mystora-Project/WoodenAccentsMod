@@ -21,13 +21,13 @@ Wooden Accents adds a mix of furniture, storage, and structural blocks, with var
 * Kitchen counters
 * Kitchen cabinets
 * Narrow bookshelves
-* Wood cutter
+* Woodcutter
 
 Coffee tables can also be stacked into a taller version, so they can be used for more than just coffee tables. If you want to pick the tall version back up as-is, you can use Silk Touch.
 
 Narrow bookshelves work like vanilla chiseled bookshelves, so you can put books in them instead of just using them as decoration.
 
-The **wood cutter** is basically a stonecutter for wood. It uses its own recipe type, so datapacks and other mods can add whatever woodcutting recipes they want, and they show up in JEI and REI.
+The **woodcutter** is basically a stonecutter for wood. It uses its own recipe type, so datapacks and other mods can add whatever woodcutting recipes they want, and they show up in JEI and REI.
 
 ### Storage
 

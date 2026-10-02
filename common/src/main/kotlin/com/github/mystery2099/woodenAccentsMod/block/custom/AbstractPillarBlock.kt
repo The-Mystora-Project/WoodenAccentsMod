@@ -7,6 +7,7 @@ import com.github.mystery2099.woodenAccentsMod.data.client.BlockStateVariantUtil
 import com.github.mystery2099.woodenAccentsMod.data.client.BlockStateVariantUtil.uvLock
 import com.github.mystery2099.woodenAccentsMod.data.client.BlockStateVariantUtil.withXRotationOf
 import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.requires
+import com.github.mystery2099.woodenAccentsMod.data.generation.RecipeUtil.offerWoodcuttingRecipe
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomBlockStateProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomItemGroupProvider
 import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.CustomRecipeProvider
@@ -136,6 +137,10 @@ abstract class AbstractPillarBlock(val baseBlock: Block, private val pillarShape
             requires(primaryInput)
             save(exporter)
         }
+    }
+
+    fun offerPillarWoodcuttingRecipe(exporter: RecipeOutput, count: Int = 1) {
+        offerWoodcuttingRecipe(exporter, baseBlock, this, count)
     }
 
     fun genBlockStateModelSupplier(
