@@ -7,7 +7,7 @@
       "item": "minecraft:warped_planks"
     },
     "O": {
-      "tag": "c:chests"
+      "tag": "c:chests/wooden"
     },
     "_": {
       "item": "minecraft:warped_stem"

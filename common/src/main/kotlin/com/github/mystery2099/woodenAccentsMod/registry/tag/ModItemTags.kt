@@ -9,7 +9,8 @@ import net.minecraft.tags.TagKey
 
 object ModItemTags {
 
-    val chests = "chests".createItemTag("c")
+    /** Plain c:chests also holds ender chests, which shouldn't be craftable into storage furniture. */
+    val woodenChests = "chests/wooden".createItemTag("c")
     val unnestable = "unnestable".createItemTag()
 
     /** Burns for 300 ticks, like vanilla wooden blocks. Items in minecraft:non_flammable_wood are skipped. */

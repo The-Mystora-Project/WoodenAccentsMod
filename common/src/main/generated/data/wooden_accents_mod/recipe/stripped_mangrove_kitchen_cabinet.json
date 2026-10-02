@@ -7,7 +7,7 @@
       "item": "minecraft:mangrove_planks"
     },
     "O": {
-      "tag": "c:chests"
+      "tag": "c:chests/wooden"
     },
     "_": {
       "item": "minecraft:stripped_mangrove_log"

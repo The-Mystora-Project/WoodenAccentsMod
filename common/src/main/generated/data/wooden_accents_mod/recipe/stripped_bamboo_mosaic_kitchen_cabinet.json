@@ -7,7 +7,7 @@
       "item": "minecraft:bamboo_mosaic"
     },
     "O": {
-      "tag": "c:chests"
+      "tag": "c:chests/wooden"
     },
     "_": {
       "item": "minecraft:stripped_bamboo_block"

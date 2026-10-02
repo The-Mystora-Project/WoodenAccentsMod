@@ -7,7 +7,7 @@
       "item": "minecraft:cherry_planks"
     },
     "O": {
-      "tag": "c:chests"
+      "tag": "c:chests/wooden"
     },
     "_": {
       "item": "minecraft:cherry_log"
