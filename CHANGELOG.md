@@ -14,7 +14,7 @@ This file tracks player-visible changes and anything maintainers need to know be
 ### Changed
 
 - Thin pillars yield four per woodcutting recipe. Matching log and wood inputs for plank pillars yield sixteen, or eight from bamboo blocks.
-- Plank flooring now comes from woodcutting instead of a crafting recipe with paper. One plank yields two flooring pieces.
+- Plank flooring now comes from woodcutting instead of a crafting recipe with paper. One plank yields eight flooring pieces. Matching logs and wood yield thirty-two, and bamboo blocks yield sixteen.
 - Renamed the Wood Cutter to Woodcutter to match vanilla's Stonecutter.
 
 ## [1.21.1-1.3.0.0] - 2026-10-02

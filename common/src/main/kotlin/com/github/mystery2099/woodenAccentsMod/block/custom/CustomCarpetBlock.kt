@@ -40,7 +40,7 @@ class CustomCarpetBlock(val baseBlock: Block) : CarpetBlock(
         ).apply(instance, ::CustomCarpetBlock)
     }
     override fun offerRecipeTo(recipeExporter: RecipeOutput) {
-        offerWoodcuttingRecipe(recipeExporter, baseBlock, this, count = 2)
+        offerWoodcuttingRecipe(recipeExporter, baseBlock, this, count = 8)
     }
 
     override fun generateBlockStateModels(generator: BlockModelGenerators) {
