@@ -5,6 +5,7 @@ import com.github.mystery2099.woodenAccentsMod.data.generation.interfaces.Custom
 import com.github.mystery2099.woodenAccentsMod.registry.tag.ModBlockTags
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider
+import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags
 import net.minecraft.core.HolderLookup
 import net.minecraft.tags.BlockTags
 import net.minecraft.tags.TagKey
@@ -29,10 +30,11 @@ class BlockTagDataGen(output: FabricDataOutput, registriesFuture: CompletableFut
         ModBlockTags.thinPillarsConnectable.apply {
             addTags(
                 ModBlockTags.thinPillars,
-                BlockTags.FENCES,
                 ModBlockTags.supportBeams,
                 ModBlockTags.tables,
             )
+            // This provider doesn't define minecraft:fences, so it can't validate the reference.
+            forceAdd(BlockTags.FENCES)
             addBlocks(Blocks.END_ROD, Blocks.HOPPER, Blocks.LIGHTNING_ROD)
         }
         ModBlockTags.thickPillarsConnectable.addTags(
@@ -40,19 +42,23 @@ class BlockTagDataGen(output: FabricDataOutput, registriesFuture: CompletableFut
             ModBlockTags.thinPillars,
             BlockTags.WALLS
         )
+        // Vanilla wooden fences connect to anything in wooden_fences, so modern fences connect back to keep it two-way.
         ModBlockTags.modernFenceConnectable.addTags(
             ModBlockTags.modernFenceGates,
             ModBlockTags.modernFences,
             ModBlockTags.thickPillars,
             ModBlockTags.thinPillars,
+            BlockTags.WOODEN_FENCES,
         )
         ModBlockTags.kitchenCounters += ModBlockTags.kitchenCabinets
 
         BlockTags.WALLS += ModBlockTags.woodenWalls
-        BlockTags.FENCES += ModBlockTags.modernFences
+        BlockTags.WOODEN_FENCES += ModBlockTags.modernFences
         BlockTags.FENCE_GATES += ModBlockTags.modernFenceGates
         BlockTags.CLIMBABLE.addTags(ModBlockTags.plankLadders, ModBlockTags.connectingLadders, ModBlockTags.simpleLadders)
-        BlockTags.INSIDE_STEP_SOUND_BLOCKS += ModBlockTags.plankCarpets
+        BlockTags.COMBINATION_STEP_SOUND_BLOCKS += ModBlockTags.plankCarpets
+
+        ConventionalBlockTags.WOODEN_FENCE_GATES += ModBlockTags.modernFenceGates
     }
 
     private fun TagKey<Block>.add(tag: TagKey<Block>): FabricTagBuilder = tagBuilder.addTag(tag)
