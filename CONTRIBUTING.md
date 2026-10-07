@@ -21,6 +21,7 @@ Useful tasks:
 - `./gradlew :fabric:runClient` or `:neoforge:runClient` starts a development client.
 - `./gradlew :fabric:runServer` or `:neoforge:runServer` starts a development server.
 - `./gradlew :fabric:runDatagen` regenerates the shared models, block states, recipes, loot tables, tags, language entries, and advancements.
+- `./gradlew :fabric:test` runs the shared narrow-bookshelf regression tests against Minecraft 1.21.1 on Java 21. These also run during `build` and in CI.
 - `./gradlew build` compiles both loaders and creates distributable JARs in their respective `build/libs/` directories.
 
 ## Generated data
