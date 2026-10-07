@@ -58,17 +58,23 @@ Every block except the woodcutter has a variant for each vanilla wood type, incl
 The creative tabs group blocks into Furniture, Storage, and Building. Each block type has its wood variants together.
 
 - Use a chair to sit and sneak to dismount. Each chair seats one player. Breaking an occupied chair dismounts its rider.
-- Crates keep their nine slots of items when broken. Crates with identical item data can stack up to four. Crates reject items in the mod's `unnestable` tag, including other crates and shulker boxes.
+- Crates keep their nine slots of items when broken. Crates with identical item data can stack up to four. Crates reject items in the mod's `unnestable` tag, including other crates, shulker boxes, and bundles.
 - Name a crate, desk drawer, or kitchen cabinet in an anvil before placing it. The container uses that name, and its dropped block item keeps it. Drawers and cabinets scatter their contents separately when broken.
 - Place a matching coffee table on top of a short one to make it tall. Silk Touch keeps the tall version; breaking it normally drops two short tables.
-- Use a woodcutter like a stonecutter: put wood in the left slot and pick a result. It strips logs into planks and cuts planks, logs, and wood into vanilla building pieces, plank flooring, and wooden decorations from this mod. Recipes use the `wooden_accents_mod:woodcutting` type, which has the same JSON format as `minecraft:stonecutting`, so datapacks can add their own. JEI and REI show them under Woodcutting.
-- Attach bracket shelves to solid block faces. Use the left, middle, or right third to swap that slot with your held stack. Power up to three connected shelves facing the same way to swap their contents with the rightmost three, six, or nine hotbar slots. Hoppers insert from above and extract below.
+- Use a narrow bookshelf like a vanilla chiseled bookshelf to store up to six books.
+- Cut plank flooring in the woodcutter. You can use matching planks, logs, wood, or bamboo blocks.
+- Use a woodcutter like a stonecutter: put wood in the left slot and pick a result. It strips logs or turns them into planks, and cuts planks, logs, and wood into vanilla building pieces, plank flooring, and wooden decorations from this mod. Recipes use the `wooden_accents_mod:woodcutting` type, which has the same JSON format as `minecraft:stonecutting`, so datapacks can add their own. JEI and REI show them under Woodcutting.
+- Attach bracket shelves to solid block faces. Use the left, middle, or right third to swap that slot with your held stack. Use a powered shelf to swap its contents with the rightmost three hotbar slots. Up to three adjacent, powered shelves of the same wood type and facing join the swap, using six or nine slots. Hoppers insert from above and extract below.
+
+Most wooden blocks also work as furnace fuel. Thin pillars and plank flooring burn for less since a plank cuts into several of them. Crimson and warped variants do not burn.
 
 Picket fences, plank flooring, and narrow bookshelves previously had names based on "modern fences," "plank carpets," and "bookshelves." Their block and item IDs are unchanged, so existing worlds and recipes keep working.
 
 ## Data pack tags
 
 Every block type has its own block and item tag, like `wooden_accents_mod:chairs` or `wooden_accents_mod:tables`. Tables, desks, desk drawers, and kitchen counters connect to anything in their tag, so you can add your own blocks to them.
+
+All tags below use the `wooden_accents_mod` namespace. Keep the existing tag IDs in data packs, even where the displayed block name has changed.
 
 These tags control connections and other behavior:
 

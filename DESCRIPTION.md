@@ -8,7 +8,7 @@ I like working with vanilla blocks, but sometimes a chair should just look like 
 
 The goal isn't really to push one specific furniture style or completely change how Minecraft looks. Wooden Accents is meant to give you **more pieces to build with** while still fitting reasonably well alongside vanilla.
 
-## What's Included?
+## What's included?
 
 Wooden Accents adds a mix of furniture, storage, and structural blocks, with variants for the vanilla wood types available to the mod.
 
@@ -38,11 +38,11 @@ The **woodcutter** is basically a stonecutter for wood. It uses its own recipe t
 
 **Crates** are basically my take on smaller wooden portable storage. They keep their contents when broken, and crates with matching contents can still stack as items. Desk drawers and kitchen cabinets offer more storage and drop their contents when broken.
 
-**Bracket shelves** can store and display up to three stacks of items directly on the shelf. Multiple shelves connect together visually, and powered shelves can swap their contents with parts of your hotbar. They also support comparator output and hopper interaction.
+**Bracket shelves** can store and display up to three stacks of items directly on the shelf. Multiple shelves connect together visually, and you can use powered shelves to swap their contents with parts of your hotbar. They also support comparator output and hopper interaction.
 
 So yes, you can absolutely just use them to put some items on a shelf. I may have gotten slightly carried away after that, but I was inspired by Vanilla shelves.
 
-### Building & Structural Blocks
+### Building and structural blocks
 
 * Stripped wood ladders
 * Plank ladders
@@ -58,19 +58,23 @@ The **stripped wood ladders** are 3D ladders that connect vertically, while **pl
 
 **Support beams** can connect in every direction and are useful for framing builds or adding exposed structural details. Visually, they're kind of like the wooden pipes you see in some mods, except they're just featureless structural pieces rather than actual pipes.
 
-The thin and thick pillars are basically another option for vertical supports, and they automatically connect with matching pillars above and below.
+Thin and thick pillars connect vertically and line up with walls, fences, and support beams. Try mixing them in a column or railing. Block tags let data packs change many of these connections.
 
-## Every Wood Type
+Plank flooring comes from the woodcutter. It plays the step sound of the block underneath it.
+
+Most wooden blocks can fuel furnaces, with shorter burn times for thin pillars and flooring. Crimson and warped variants do not burn.
+
+## Every wood type
 
 Pretty much every block family has variants for the vanilla wood types available to the mod, including the overworld woods, bamboo, crimson, and warped.
 
 ## Compatibility
 
-Wooden Accents has Fabric and NeoForge builds for both clients and dedicated servers.
+Wooden Accents has Fabric and NeoForge builds for both clients and dedicated servers. Install it on both sides when playing multiplayer.
 
 Check the [download page](https://modrinth.com/mod/wooden-accents-mod/versions) for supported Minecraft versions and the Java version they need.
 
-### Required Dependencies
+### Required dependencies
 
 * [VoxLib](https://modrinth.com/mod/voxlib) for your loader
 * Fabric: [Fabric Loader](https://fabricmc.net/use/installer/), [Fabric API](https://modrinth.com/mod/fabric-api), and [Fabric Language Kotlin](https://modrinth.com/mod/fabric-language-kotlin)
@@ -78,14 +82,14 @@ Check the [download page](https://modrinth.com/mod/wooden-accents-mod/versions) 
 
 Use versions that match the Wooden Accents file you're installing. If you're installing through the Modrinth App, it should handle these dependencies for you anyway.
 
-### Recommended Mods
+### Recommended mods
 
 Wooden Accents doesn't require these, but they make a few parts of the mod nicer to use:
 
 * [Shulker Box Tooltip](https://modrinth.com/mod/shulkerboxtooltip) or [Easy Shulker Boxes](https://modrinth.com/mod/easy-shulker-boxes) for previewing crate inventories
 * [Just Enough Items](https://modrinth.com/mod/jei) or [Roughly Enough Items](https://modrinth.com/mod/rei) for looking up recipes
 
-## Version Support & What's Next
+## Version support and what's next
 
 The [download page](https://modrinth.com/mod/wooden-accents-mod/versions) has the current releases and older builds for existing worlds. The roadmap has my current ideas for future updates.
 
@@ -100,7 +104,7 @@ You can follow the current plans here:
 * [**Wooden Accents Roadmap**](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/ROADMAP.md)
 * [**Changelog**](https://github.com/The-Mystora-Project/WoodenAccentsMod/blob/master/CHANGELOG.md)
 
-## AI Usage
+## AI usage
 
 Wooden Accents was originally created and developed by me without generative AI. More recent development has included AI-assisted tools for parts of the code, testing, debugging, refactoring, documentation, and other development work.
 
@@ -114,7 +118,7 @@ Yes, you can use Wooden Accents in modpacks.
 
 Credit and a link back to the project are appreciated.
 
-## Source & Issues
+## Source and issues
 
 Wooden Accents is open source. If you want to look through the code, report a bug, or see what I'm currently working on:
 
