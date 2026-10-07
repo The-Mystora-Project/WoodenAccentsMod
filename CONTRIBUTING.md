@@ -6,7 +6,7 @@ This project targets Minecraft 1.21.1 on Fabric and NeoForge. Please do not bund
 
 ## Development setup
 
-Use Java 25 for the Gradle daemon, as configured in `gradle/gradle-daemon-jvm.properties`. The mod itself targets Java 21.
+Install JDK 21 and JDK 25 before building. The Gradle daemon uses Java 25, as configured in `gradle/gradle-daemon-jvm.properties`. The mod targets Java 21, and the regression tests require a local JDK 21 installation. Gradle does not download that test runtime automatically.
 
 Clone the repository and run:
 
@@ -21,6 +21,7 @@ Useful tasks:
 - `./gradlew :fabric:runClient` or `:neoforge:runClient` starts a development client.
 - `./gradlew :fabric:runServer` or `:neoforge:runServer` starts a development server.
 - `./gradlew :fabric:runDatagen` regenerates the shared models, block states, recipes, loot tables, tags, language entries, and advancements.
+- `./gradlew :fabric:test` runs the shared narrow-bookshelf regression tests against Minecraft 1.21.1 on Java 21. These also run during `build` and in CI.
 - `./gradlew build` compiles both loaders and creates distributable JARs in their respective `build/libs/` directories.
 
 ## Generated data

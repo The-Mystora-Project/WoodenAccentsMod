@@ -148,6 +148,8 @@ java {
 }
 
 dependencies {
+	testImplementation "junit:junit:4.13.2"
+	testImplementation "org.mockito:mockito-core:5.23.0"
 	// To change the versions see the gradle.properties file
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
 	mappings loom.officialMojangMappings()
@@ -233,4 +235,15 @@ publishMods {
 
 tasks.named('publishGithub') {
 	dependsOn ':neoforge:jar', ':neoforge:sourcesJar'
+}
+
+// Exercise shared bookshelf behavior on Minecraft's supported runtime, including in CI.
+tasks.named("test", Test) {
+	workingDir = layout.buildDirectory.dir("tests").get().asFile
+	doFirst {
+		workingDir.mkdirs()
+	}
+	javaLauncher = javaToolchains.launcherFor {
+		languageVersion = JavaLanguageVersion.of(21)
+	}
 }

@@ -36,6 +36,14 @@ import net.minecraft.tags.TagKey
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.data.recipes.RecipeOutput
+import net.minecraft.world.InteractionHand
+import net.minecraft.world.InteractionResult
+import net.minecraft.world.ItemInteractionResult
+import net.minecraft.world.entity.player.Player
+import net.minecraft.world.item.ItemStack
+import net.minecraft.world.level.Level
+import net.minecraft.world.level.block.entity.ChiseledBookShelfBlockEntity
+import net.minecraft.world.phys.BlockHitResult
 import net.minecraft.world.phys.shapes.VoxelShape
 import net.minecraft.world.phys.shapes.Shapes
 import net.minecraft.world.level.BlockGetter
@@ -73,6 +81,43 @@ class ThinBookshelfBlock(val baseBlock: Block) :
         Direction.SOUTH -> southShape
         Direction.WEST -> westShape
         else -> Shapes.block()
+    }
+
+    override fun useItemOn(
+        stack: ItemStack,
+        state: BlockState,
+        world: Level,
+        pos: BlockPos,
+        player: Player,
+        hand: InteractionHand,
+        hit: BlockHitResult
+    ): ItemInteractionResult =
+        super.useItemOn(stack, repairOccupiedSlots(state, world, pos), world, pos, player, hand, hit)
+
+    override fun useWithoutItem(
+        state: BlockState,
+        world: Level,
+        pos: BlockPos,
+        player: Player,
+        hit: BlockHitResult
+    ): InteractionResult =
+        super.useWithoutItem(repairOccupiedSlots(state, world, pos), world, pos, player, hit)
+
+    private fun repairOccupiedSlots(state: BlockState, world: Level, pos: BlockPos): BlockState {
+        // Older builds could lose the block entity while leaving occupied slots in the saved block state.
+        // Vanilla rejects inserting into those slots, and removing a missing book never clears them.
+        // Client inventories aren't synchronized, so only the server can repair these flags.
+        if (world.isClientSide) return state
+        val bookshelf = world.getBlockEntity(pos) as? ChiseledBookShelfBlockEntity ?: return state
+        var repairedState = state
+        for (slot in SLOT_OCCUPIED_PROPERTIES.indices) {
+            repairedState = repairedState.setValue(SLOT_OCCUPIED_PROPERTIES[slot], !bookshelf.getItem(slot).isEmpty)
+        }
+        if (repairedState != state) {
+            world.setBlock(pos, repairedState, Block.UPDATE_ALL)
+            bookshelf.setChanged()
+        }
+        return repairedState
     }
 
     override fun offerRecipeTo(recipeExporter: RecipeOutput) {
