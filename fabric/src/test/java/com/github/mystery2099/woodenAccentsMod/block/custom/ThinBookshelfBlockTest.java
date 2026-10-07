@@ -69,28 +69,32 @@ public class ThinBookshelfBlockTest {
 
     @Test
     public void preservesStoredBooksAndTheirComponents() {
-        BlockState state = stateWithSlots(1);
-        Level level = mock(Level.class);
-        ChiseledBookShelfBlockEntity bookshelf = new ChiseledBookShelfBlockEntity(POS, state);
-        ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
-        book.set(DataComponents.CUSTOM_NAME, Component.literal("Keep this book"));
-        NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
-        items.set(4, book);
-        CompoundTag saved = new CompoundTag();
-        // Load through vanilla's persistence API, avoiding insertion's automatic flag reconciliation.
-        ContainerHelper.saveAllItems(saved, items, RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY));
-        bookshelf.loadWithComponents(saved, RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY));
-        ItemStack stored = bookshelf.getItem(4);
-        ItemStack before = stored.copy();
-        when(level.getBlockEntity(POS)).thenReturn(bookshelf);
+        for (int slot = 0; slot < 6; slot++) {
+            for (boolean withItem : new boolean[]{false, true}) {
+                BlockState state = stateWithSlots(1 << ((slot + 1) % 6));
+                Level level = mock(Level.class);
+                ChiseledBookShelfBlockEntity bookshelf = new ChiseledBookShelfBlockEntity(POS, state);
+                ItemStack book = new ItemStack(Items.ENCHANTED_BOOK);
+                book.set(DataComponents.CUSTOM_NAME, Component.literal("Keep this book"));
+                NonNullList<ItemStack> items = NonNullList.withSize(6, ItemStack.EMPTY);
+                items.set(slot, book);
+                CompoundTag saved = new CompoundTag();
+                // Load through vanilla's persistence API, avoiding insertion's automatic flag reconciliation.
+                ContainerHelper.saveAllItems(saved, items, RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY));
+                bookshelf.loadWithComponents(saved, RegistryAccess.fromRegistryOfRegistries(BuiltInRegistries.REGISTRY));
+                ItemStack stored = bookshelf.getItem(slot);
+                ItemStack before = stored.copy();
+                when(level.getBlockEntity(POS)).thenReturn(bookshelf);
 
-        interact(block(), state, level, true);
+                interact(block(), state, level, withItem);
 
-        verify(level).setBlock(POS, stateWithSlots(1 << 4), Block.UPDATE_ALL);
-        assertSame(stored, bookshelf.getItem(4));
-        assertTrue(ItemStack.isSameItemSameComponents(before, stored));
-        assertEquals(before.getCount(), stored.getCount());
-        assertEquals(1, bookshelf.count());
+                verify(level).setBlock(POS, stateWithSlots(1 << slot), Block.UPDATE_ALL);
+                assertSame(stored, bookshelf.getItem(slot));
+                assertTrue(ItemStack.isSameItemSameComponents(before, stored));
+                assertEquals(before.getCount(), stored.getCount());
+                assertEquals(1, bookshelf.count());
+            }
+        }
     }
 
     @Test
