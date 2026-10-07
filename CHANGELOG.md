@@ -28,6 +28,7 @@ This file tracks player-visible changes and anything maintainers need to know be
 ### Fixed
 
 - Kitchen cabinets can no longer be crafted with ender chests. Crates and desk drawers now accept wooden chests from other mods.
+- Narrow bookshelves repair stale occupied slots when used, so shelves whose book data was lost in an older build can accept books again. Any books still stored are preserved; missing book data cannot be recovered.
 
 ## [1.21.1-1.2.0.0] - 2026-09-25
 
