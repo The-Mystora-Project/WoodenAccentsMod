@@ -27,15 +27,19 @@ Versions look like `<minecraft_version>-<content_version>`, for example `1.21.1-
 
 ## Prepare a release
 
-1. Set `mod_version` in `gradle.properties`.
-2. Make sure `CHANGELOG.md` has a non-empty `## [<mod_version>] - YYYY-MM-DD` section. The build fails without one, since that section becomes the release notes.
-3. Merge the version and changelog changes into `master` and confirm CI passes.
+1. Set `mod_version` in `gradle.properties`. Documentation-only changes do not need a new mod version.
+2. Make sure `CHANGELOG.md` has a non-empty `## [<mod_version>] - YYYY-MM-DD` section. Publishing fails without one, since that section becomes the release notes. A normal `build` does not validate the release notes.
+3. Run `./gradlew build` and regenerate data if needed. CI builds both loaders on Linux and Windows and checks generated resources on Linux.
+4. Test both loaders in-game, including a dedicated server, before calling the release stable.
+5. Merge the version and changelog changes into `master` and confirm CI passes.
 
 ## Dry run
 
 1. Open **Actions → Release → Run workflow** and pick the branch.
 2. Leave **Dry run** on and **Confirm release** off.
 3. Choose the release type and run it.
+
+The release workflow packages the JARs but does not run the regression tests or check for stale generated data. Confirm the build workflow passes first.
 
 This builds the release JARs and uploads them as a workflow artifact for seven days without creating a tag or release. To do the same locally:
 
@@ -47,7 +51,8 @@ This builds the release JARs and uploads them as a workflow artifact for seven d
 
 1. Open **Actions → Release → Run workflow** on `master`.
 2. Choose the release type, turn **Dry run** off, and turn **Confirm release** on.
-3. Check the `v<mod_version>` tag, release notes, and both JARs on GitHub Releases.
+3. Check the `v<mod_version>` tag, release notes, and both loader JARs on GitHub Releases. Sources JARs are for development, not installation.
+4. Upload the matching loader JARs and release notes to Modrinth and CurseForge by hand. Set the Minecraft version, loader, release type, and required dependencies for each file.
 
 Real releases are rejected if they don't run from `master`, if **Confirm release** is off, or if the tag or release already exists.
 

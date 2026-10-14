@@ -24,6 +24,16 @@ Useful tasks:
 - `./gradlew :fabric:test` runs the shared narrow-bookshelf regression tests against Minecraft 1.21.1 on Java 21. These also run during `build` and in CI.
 - `./gradlew build` compiles both loaders and creates distributable JARs in their respective `build/libs/` directories.
 
+## Project layout
+
+- `common/src/main/kotlin/` and `common/src/main/java/` hold shared gameplay code. Both loader projects compile these sources directly.
+- `common/src/client/kotlin/` holds shared client code, including renderers and recipe viewer integrations.
+- `common/src/main/resources/` holds hand-written resources, and `common/src/main/generated/` holds datagen output.
+- `fabric/` and `neoforge/` hold loader entrypoints, registration, metadata, and loader-specific compatibility code.
+- `fabric/src/test/java/` holds the shared narrow-bookshelf regression tests. There is no separate NeoForge test suite.
+
+The `common` module supports compilation and IDE navigation; it does not produce a distributable mod JAR. Install the loader JAR, not a sources JAR.
+
 ## Generated data
 
 Generated resources in `common/src/main/generated/` are committed on purpose. When changing a block, recipe, tag, model, loot table, language entry, or advancement:
@@ -55,5 +65,11 @@ The mod is Kotlin-first, but small Java implementations are fine when they fit M
 - Include generated files that belong to the change.
 - Explain player-visible behavior and any non-obvious implementation decisions.
 - Mention what you tested. A short manual test is often more useful here than a large test framework.
+
+## Documentation
+
+Keep player instructions in [README.md](README.md) and the public project description in [DESCRIPTION.md](DESCRIPTION.md) consistent when gameplay changes. Use absolute links in the description because it is pasted into Modrinth and CurseForge. Add player-visible changes to the existing changelog section for `mod_version`, and keep future ideas in [ROADMAP.md](ROADMAP.md).
+
+Keep docs focused on how things work. Leave exact recipe yields, dependency versions, and past fixes in the recipes, mod metadata, and changelog unless readers need them to get started. Documentation-only edits do not need a mod version bump.
 
 Release preparation is documented separately in [RELEASING.md](RELEASING.md).

@@ -15,6 +15,9 @@ import com.github.mystery2099.woodenAccentsMod.stat.ModStats
 import net.fabricmc.api.ModInitializer
 import net.fabricmc.fabric.api.registry.FuelRegistry
 import net.fabricmc.fabric.api.`object`.builder.v1.block.entity.FabricBlockEntityType
+import net.minecraft.core.registries.Registries
+import net.minecraft.resources.ResourceLocation
+import net.minecraft.tags.TagKey
 import net.minecraft.world.level.block.entity.BlockEntityType
 
 object WoodenAccentsFabric : ModInitializer {
@@ -36,6 +39,10 @@ object WoodenAccentsFabric : ModInitializer {
         FuelRegistry.INSTANCE.add(ModItemTags.furnaceFuels, 300)
         FuelRegistry.INSTANCE.add(ModBlockTags.getItemTagFrom(ModBlockTags.thinPillars), 75)
         FuelRegistry.INSTANCE.add(ModBlockTags.getItemTagFrom(ModBlockTags.plankCarpets), 37)
+        // Tag registrations always win, and the fuel map is rebuilt on every tag reload, so a
+        // zero-burn registration on minecraft:non_flammable_wood excludes nether wood variants
+        // the same way the NeoForge data map's "remove" list does.
+        FuelRegistry.INSTANCE.remove(TagKey.create(Registries.ITEM, ResourceLocation.withDefaultNamespace("non_flammable_wood")))
     }
 
     /**
