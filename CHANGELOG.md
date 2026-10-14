@@ -2,6 +2,12 @@
 
 This file tracks player-visible changes and anything maintainers need to know before publishing a release. Release headings must match `mod_version` in `gradle.properties` so the publishing workflow can use the section as its release notes.
 
+## [1.21.1-1.3.1.0] - 2026-10-13
+
+### Fixed
+
+- Crimson and warped furniture no longer burns in furnaces on Fabric. NeoForge already ignored nether wood like the docs said, so both loaders match now.
+
 ## [1.21.1-1.3.0.0] - 2026-10-02
 
 ### Added
